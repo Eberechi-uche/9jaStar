@@ -37,7 +37,7 @@ export const Users = () => {
           Nigeria and my audience reach has surpassed all thanks to 9jastar
         </p>
         <div className="user-details-container">
-          <img src="images/9jastar /913.jpg" alt="user image"></img>
+          <img src="images/9jastar /913.jpg" alt="user profile"></img>
           <p> Reya, 22</p>
           <p>Artist</p>
         </div>

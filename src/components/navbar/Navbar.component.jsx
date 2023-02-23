@@ -2,7 +2,8 @@ import "./navbar.styles.css";
 import { PlayIcon } from "../../svg/PlayIcon.svg";
 import { HamburgerIcon } from "../../svg/Hamburger.svg";
 import { NavLink, Outlet } from "react-router-dom";
-import { useState } from "react";
+import { useState, useLayoutEffect, useRef } from "react";
+import { gsap } from "gsap";
 
 export const Navbar = () => {
   const [showNav, setShowNav] = useState(false);
@@ -13,7 +14,7 @@ export const Navbar = () => {
   let activeStyle = {
     color: "#5ebb3b",
   };
-  let activeClassName = "link";
+
   return (
     <>
       <nav className="nav">
@@ -93,11 +94,19 @@ export const Play = () => {
 };
 
 export const NavDropDown = () => {
+  const navSlide = useRef();
   let activeStyle = {
     color: "#5ebb3b",
   };
+
+  useLayoutEffect(() => {
+    gsap.to(navSlide.current, {
+      transition: "all 0.1s ease-out",
+      translateX: "70",
+    });
+  }, []);
   return (
-    <div className="nav-dropdown">
+    <div className="nav-dropdown" ref={navSlide}>
       <ul className="fl fl-col">
         <li>
           <NavLink
