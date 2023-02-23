@@ -18,7 +18,7 @@ export const Navbar = () => {
   return (
     <>
       <nav className="nav">
-        <NavLink to="/home">
+        <NavLink to="/">
           <p className="text-col-white">9jaStar</p>
         </NavLink>
         <div className="toggle-icon" onClick={toggleNav}>
@@ -29,7 +29,7 @@ export const Navbar = () => {
           <ul className="fl fl-row wd-100">
             <li>
               <NavLink
-                to="/home"
+                to="/"
                 style={({ isActive }) => (isActive ? activeStyle : undefined)}
               >
                 Home
@@ -114,7 +114,7 @@ export const NavDropDown = () => {
       <ul className="fl fl-col">
         <li>
           <NavLink
-            to="/home"
+            to="/"
             style={({ isActive }) => (isActive ? activeStyle : undefined)}
           >
             Home
