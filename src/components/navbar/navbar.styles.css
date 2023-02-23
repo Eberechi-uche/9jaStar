@@ -50,7 +50,6 @@
 .nav-dropdown ul {
   width: inherit;
   height: inherit;
-  outline: 2px solid black;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
