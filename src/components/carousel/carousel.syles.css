@@ -1,0 +1,13 @@
+.carousel-wrapper {
+  height: fit-content;
+  overflow: hidden;
+  place-items: center;
+  color: var(--white);
+  margin-top: 20px;
+}
+
+.carousel-item-container {
+  overflow: auto;
+  white-space: nowrap;
+  padding: 10px;
+}

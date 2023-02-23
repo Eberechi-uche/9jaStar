@@ -70,8 +70,12 @@ export const Navbar = () => {
           </ul>
         </div>
       </nav>
-      <Outlet></Outlet>
-      <Footer />
+      <div className="outlet-container">
+        <Outlet></Outlet>
+      </div>
+      <div className="footer-wrapper">
+        <Footer />
+      </div>
     </>
   );
 };

@@ -1,11 +1,12 @@
 import "./carousel.syles.css";
-import { useState } from "react";
 
-export const Carousel = ({ children }) => {
-  const [slide, setSlide] = useState(1);
+export const Carousel = ({ children, title }) => {
   return (
-    <div>
-      <div>{children}</div>
-    </div>
+    <>
+      <div className="carousel-wrapper">
+        <h3>{title}</h3>
+        <div className="carousel-item-container">{children}</div>
+      </div>
+    </>
   );
 };

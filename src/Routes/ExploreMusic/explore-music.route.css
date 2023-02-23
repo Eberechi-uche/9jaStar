@@ -1,4 +1,5 @@
-.explore-music-container {
+.explore-music-wrapper {
+  padding: 20px;
 }
 .header-img-container {
   display: grid;
