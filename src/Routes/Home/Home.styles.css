@@ -1,21 +1,25 @@
 .hero-container {
+  width: 90vw;
   height: fit-content;
-  padding-top: 50px;
+  padding-top: 40px;
 }
 .hero-container p,
 button {
   margin-top: 20px;
 }
+.text-container {
+  width: 90%;
+}
 .image-container-wrapper {
-  padding: 20px;
+  padding: 10px;
   display: flex;
   justify-content: space-between;
   width: 100%;
-  height: auto;
+  height: fit-content;
   position: relative;
 }
 .image-container {
-  width: 45%;
+  width: 50%;
   height: 85%;
   border-radius: 500px;
   overflow: hidden;
@@ -30,7 +34,7 @@ button {
 .top-item {
   position: absolute;
   top: -60px;
-  right: 2rem;
+  right: 1rem;
 }
 .image-container:hover {
   transform: scale(1.1);

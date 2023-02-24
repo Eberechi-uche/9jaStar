@@ -17,20 +17,21 @@ export const Navbar = () => {
 
   return (
     <>
-      <nav className="nav">
-        <NavLink to="/">
+      <nav className="nav ">
+        <NavLink to="/" className="link ">
           <p className="text-col-white">9jaStar</p>
         </NavLink>
         <div className="toggle-icon" onClick={toggleNav}>
           <HamburgerIcon />
           {showNav && <NavDropDown />}
         </div>
-        <div className="nav-item">
+        <div className="nav-item ">
           <ul className="fl fl-row wd-100">
             <li>
               <NavLink
                 to="/"
                 style={({ isActive }) => (isActive ? activeStyle : undefined)}
+                className="link"
               >
                 Home
               </NavLink>
@@ -39,6 +40,7 @@ export const Navbar = () => {
               <NavLink
                 to="/explore-music"
                 style={({ isActive }) => (isActive ? activeStyle : undefined)}
+                className="link"
               >
                 Expolore Music
               </NavLink>
@@ -47,6 +49,7 @@ export const Navbar = () => {
               <NavLink
                 to="/fan-request"
                 style={({ isActive }) => (isActive ? activeStyle : undefined)}
+                className="link"
               >
                 Fan request
               </NavLink>
@@ -55,6 +58,7 @@ export const Navbar = () => {
               <NavLink
                 to="/partner-with-us"
                 style={({ isActive }) => (isActive ? activeStyle : undefined)}
+                className="link"
               >
                 Partner With us
               </NavLink>
@@ -63,6 +67,7 @@ export const Navbar = () => {
               <NavLink
                 to="/listen-now"
                 style={({ isActive }) => (isActive ? activeStyle : undefined)}
+                className="link"
               >
                 <Play />
               </NavLink>
@@ -89,7 +94,7 @@ export const Header = ({ children }) => {
 export const Play = () => {
   return (
     <div className="logo">
-      <a href=""> listen now</a>
+      <p> listen now</p>
       <div className="svg-round">
         <PlayIcon />
       </div>
@@ -104,9 +109,8 @@ export const NavDropDown = () => {
   };
 
   useLayoutEffect(() => {
-    gsap.to(navSlide.current, {
+    gsap.from(navSlide.current, {
       transition: "all 0.1s ease-out",
-      translateX: "70",
     });
   }, []);
   return (
@@ -116,6 +120,7 @@ export const NavDropDown = () => {
           <NavLink
             to="/"
             style={({ isActive }) => (isActive ? activeStyle : undefined)}
+            className="link"
           >
             Home
           </NavLink>
@@ -124,6 +129,7 @@ export const NavDropDown = () => {
           <NavLink
             to="/explore-music"
             style={({ isActive }) => (isActive ? activeStyle : undefined)}
+            className="link"
           >
             Expolore Music
           </NavLink>
@@ -132,6 +138,7 @@ export const NavDropDown = () => {
           <NavLink
             to="/fan-request"
             style={({ isActive }) => (isActive ? activeStyle : undefined)}
+            className="link"
           >
             Fan request
           </NavLink>
@@ -140,6 +147,7 @@ export const NavDropDown = () => {
           <NavLink
             to="/partner-with-us"
             style={({ isActive }) => (isActive ? activeStyle : undefined)}
+            className="link"
           >
             Partner With us
           </NavLink>
@@ -148,6 +156,7 @@ export const NavDropDown = () => {
           <NavLink
             to="/listen-now"
             style={({ isActive }) => (isActive ? activeStyle : undefined)}
+            className="link"
           >
             <Play />
           </NavLink>
@@ -160,16 +169,14 @@ export const NavDropDown = () => {
 export const Footer = () => {
   return (
     <footer className="footer-container">
-      <div className="footer-link-container">
-        <div>9jaStar</div>
-        <ul className="footer-list">
-          <li>Explore Music</li>
-          <li> community</li>
-          <li>Partney with us</li>
-          <li>Get support</li>
-          <li>usefull links</li>
-        </ul>
-      </div>
+      <ul className="footer-list">
+        <li>9jaStar</li>
+        <li>Explore Music</li>
+        <li>community</li>
+        <li>Partney with us</li>
+        <li>Get support</li>
+        <li>usefull links</li>
+      </ul>
       <div>
         <ul className="footer-list">
           <li>instagram</li>

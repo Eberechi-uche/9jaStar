@@ -1,6 +1,4 @@
 import "./Home.styles.css";
-import { MusicIcon } from "../../svg/svg.component";
-import { CardLg, ScrollLayout } from "../../components/cards/Card.component";
 import { Header } from "../../components/navbar/Navbar.component";
 import {
   SectionImage,
@@ -45,7 +43,7 @@ export const Home = () => {
 
 export const Hero = () => {
   return (
-    <div className="hero-container gd gd-col-2">
+    <div className="hero-container gd gd-col-2 ">
       <div className="text-container">
         <h1 className="text-col-white">
           GET THAT VISIBILITY NEEDED AS AN UPCOMING ARTIST WITH 9JASTAR

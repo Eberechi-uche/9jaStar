@@ -7,9 +7,9 @@ export const SectionLayout = ({ children }) => {
 export const SectionText = ({ children }) => {
   return (
     <>
-      <div className="section-text-container">
+      <div className="section-text-container ">
         <p> {children}</p>
-        <button className="btn btn-round bg-tertiary-purple btn-wd-fit-content">
+        <button className="btn btn-round text-col-white bg-tertiary-purple btn-wd-fit-content">
           Learn more
         </button>
       </div>
@@ -20,7 +20,7 @@ export const SectionText = ({ children }) => {
 export const SectionImage = () => {
   return (
     <>
-      <div className="section-image-container">
+      <div className="section-image-container ">
         <img src="images/test-image.JPG" alt="yoda"></img>
       </div>
     </>
