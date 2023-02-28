@@ -5,9 +5,12 @@
   color: var(--white);
   margin-top: 20px;
 }
+.carousel-wrapper h3 {
+  padding-left: 20px;
+}
 
 .carousel-item-container {
   overflow: auto;
   white-space: nowrap;
-  padding: 10px;
+  scroll-snap-type: x proximity;
 }

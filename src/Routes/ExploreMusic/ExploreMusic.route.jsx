@@ -5,6 +5,7 @@ import {
   CardImage,
   CardRound,
 } from "../../components/cards/Card.component";
+import artists from "../../../src/artist.json";
 export const ExploreMusic = () => {
   return (
     <>
@@ -12,32 +13,33 @@ export const ExploreMusic = () => {
         <header className="explore-music-header">
           <ExploreMusicHeader />
         </header>
-        <Carousel title={"Top Trending Artist"}>
-          <CardLg />
-          <CardLg />
-          <CardLg />
-          <CardLg />
-        </Carousel>
-        <Carousel title={"Your Library"}>
-          <CardLg />
-          <CardLg />
-          <CardLg />
-          <CardLg />
-        </Carousel>
-        <Carousel title={"What Is Your Mood?"}>
-          <CardImage />
-          <CardImage />
-          <CardImage />
-          <CardImage />
-          <CardImage />
-          <CardImage />
-        </Carousel>
-        <Carousel title={"Top Trending Artist"}>
-          <CardRound />
-          <CardRound />
-          <CardRound />
-          <CardRound />
-        </Carousel>
+        <main className="explore-music-items">
+          <Carousel title={"Top Trending Artist"}>
+            <CardLg />
+            <CardLg />
+            <CardLg />
+            <CardLg />
+          </Carousel>
+          <Carousel title={"Your Library"}>
+            <CardLg />
+            <CardLg />
+            <CardLg />
+            <CardLg />
+          </Carousel>
+          <Carousel title={"What Is Your Mood?"}>
+            <CardImage />
+            <CardImage />
+            <CardImage />
+            <CardImage />
+            <CardImage />
+            <CardImage />
+          </Carousel>
+          <Carousel title={"Top Trending Artist"}>
+            {artists.map((element, index) => (
+              <CardRound key={index} artistId={element} />
+            ))}
+          </Carousel>
+        </main>
       </div>
     </>
   );

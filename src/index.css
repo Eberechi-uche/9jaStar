@@ -79,19 +79,6 @@ h6 {
   --caption: 12px;
 }
 /* GLOBAL  STYLES */
-.nav {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-  padding: 2rem;
-}
-.nav-m {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-}
 
 .fl {
   display: flex;
@@ -144,6 +131,9 @@ h6 {
 /* MARGIN */
 .mg-10 {
   margin: 10px;
+}
+.mg-10-t {
+  margin: 10px 0;
 }
 /* WIDTH */
 .wd-100 {

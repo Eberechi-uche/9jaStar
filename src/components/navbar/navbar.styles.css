@@ -1,5 +1,16 @@
 .nav {
   width: 100vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+}
+.nav-m {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .header-container {
@@ -42,15 +53,20 @@
   display: none;
 }
 .nav-dropdown {
-  width: 80vw;
+  width: 100vw;
   height: 70vh;
   position: absolute;
   background-color: var(--tertiary-lime);
   z-index: 2;
   left: 0;
-  top: 80px;
-  right: 0;
+  top: 0;
   text-transform: uppercase;
+}
+.nav-close-btn {
+  position: absolute;
+  right: 30px;
+  top: 20px;
+  color: var(--error);
 }
 .nav-dropdown ul {
   padding: 10px;
@@ -58,7 +74,7 @@
   height: 80%;
   display: flex;
   justify-content: space-evenly;
-  align-items: start;
+  align-items: center;
 }
 
 .footer-container {

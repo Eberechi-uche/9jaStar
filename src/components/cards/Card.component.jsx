@@ -1,5 +1,5 @@
 import "./card.styles.css";
-
+import { Link } from "react-router-dom";
 export const ScrollLayout = ({ children, title }) => {
   return (
     <div className="scroll-layout">
@@ -34,15 +34,18 @@ export const CardImage = ({ cardtitle }) => {
     </div>
   );
 };
-export const CardRound = () => {
+export const CardRound = ({ artistId }) => {
+  const { mainImage, id, name } = artistId;
   return (
     <div className="cardRound-wrapper">
-      <div className="cardRound-container">
-        <img src="images/test-image.JPG" alt="yoda"></img>
-      </div>
-      <div>
-        <p>Lola</p>
-      </div>
+      <Link to={`/explore-music/${id}`} className="link">
+        <div className="cardRound-container">
+          <img src={mainImage} alt={name} />
+        </div>
+        <div>
+          <h4>{name}</h4>
+        </div>
+      </Link>
     </div>
   );
 };

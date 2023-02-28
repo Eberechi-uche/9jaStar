@@ -23,8 +23,8 @@ export const Navbar = () => {
         </NavLink>
         <div className="toggle-icon" onClick={toggleNav}>
           <HamburgerIcon />
-          {showNav && <NavDropDown />}
         </div>
+        {showNav && <NavDropDown handleClick={toggleNav} />}
         <div className="nav-item ">
           <ul className="fl fl-row wd-100">
             <li>
@@ -102,7 +102,7 @@ export const Play = () => {
   );
 };
 
-export const NavDropDown = () => {
+export const NavDropDown = ({ handleClick }) => {
   const navSlide = useRef();
   let activeStyle = {
     color: "#5ebb3b",
@@ -110,11 +110,14 @@ export const NavDropDown = () => {
 
   useLayoutEffect(() => {
     gsap.from(navSlide.current, {
-      transition: "all 0.1s ease-out",
+      transition: "all 0.3s ease-out",
     });
   }, []);
   return (
     <div className="nav-dropdown" ref={navSlide}>
+      <div className="nav-close-btn" onClick={handleClick}>
+        &#x2715;
+      </div>
       <ul className="fl fl-col">
         <li>
           <NavLink
