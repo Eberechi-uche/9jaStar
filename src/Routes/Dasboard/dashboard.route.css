@@ -57,7 +57,7 @@
   width: 150px;
   border-radius: 15px;
   overflow: hidden;
-  margin: 20px;
+  margin: 15px;
   display: inline-block;
 }
 .cardImage-container-dashboard img {
@@ -67,25 +67,27 @@
 }
 .dashboard-wrapper {
   color: var(--white);
+  display: grid;
+  width: 100vw;
+  place-items: center;
 }
 
 .cardImage-text-dashboard {
   position: absolute;
   bottom: 20px;
   text-transform: uppercase;
-  margin: 10px;
+  /* margin: 10px; */
 }
 .dashboard-section-container {
-  display: grid;
-  place-items: center;
-  place-content: center;
-  grid-template-columns: repeat(2, 1fr);
+  display: flex;
+  justify-content: left;
+  flex-wrap: wrap;
 }
-@media screen and (min-width: 600px) {
-  .dashboard-section-container {
+@media screen and (max-width: 600) {
+  /* .dashboard-section-container {
     justify-content: flex-start;
     display: flex;
     flex-wrap: wrap;
     float: left;
-  }
+  } */
 }

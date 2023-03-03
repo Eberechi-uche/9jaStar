@@ -21,7 +21,7 @@ export const SectionImage = () => {
   return (
     <>
       <div className="section-image-container ">
-        <img src="images/test-image.JPG" alt="yoda"></img>
+        <img src="images/dance.jpg" alt="yoda"></img>
       </div>
     </>
   );
@@ -37,7 +37,7 @@ export const Users = () => {
           Nigeria and my audience reach has surpassed all thanks to 9jastar
         </p>
         <div className="user-details-container">
-          <img src="images/9jastar /913.jpg" alt="user profile"></img>
+          <img src="images/dance.jpg" alt="user profile"></img>
           <p> Reya, 22</p>
           <p>Artist</p>
         </div>

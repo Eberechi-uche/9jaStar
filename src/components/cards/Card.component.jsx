@@ -18,7 +18,7 @@ export const CardLg = () => {
         <img src="images/test-image.JPG" alt="yoda"></img>
       </div>
       <div>
-        <h3>God Dey</h3>
+        <h4>God Dey</h4>
         <p className="text-col-grey-light">Lumina</p>
       </div>
     </div>
@@ -27,7 +27,7 @@ export const CardLg = () => {
 export const CardImage = ({ cardtitle }) => {
   return (
     <div className="cardImage-container">
-      <img src="images/test-image.JPG" alt="yoda"></img>
+      <img src="images/test-image.JPG" alt="yoda" />
       <div className="cardImage-text">
         <h3>WORK OUT</h3>
       </div>

@@ -58,7 +58,6 @@ export const DashboardHeader = () => {
           ))}
         </div>
       </div>
-      <Link to="/explore-music"> go back </Link>
     </>
   );
 };

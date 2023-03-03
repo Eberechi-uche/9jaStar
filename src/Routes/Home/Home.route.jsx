@@ -1,5 +1,6 @@
 import "./Home.styles.css";
 import { Header } from "../../components/navbar/Navbar.component";
+import { Link } from "react-router-dom";
 import {
   SectionImage,
   SectionText,
@@ -53,16 +54,18 @@ export const Hero = () => {
           create positive change in the world. Through our website, we aim to
           spread the joy of music and connect fans with the artists they love.
         </p>
-        <button className="btn bg-tertiary-purple btn-round text-col-white">
-          Get started
-        </button>
+        <Link className="link" to={"/explore-music"}>
+          <button className="btn bg-tertiary-purple btn-round text-col-white">
+            Get started
+          </button>
+        </Link>
       </div>
       <div className="image-container-wrapper">
         <div className="image-container">
-          <img src="images/test-image.JPG" alt="yoda" />
+          <img src="images/singer.jpg" alt="singer" />
         </div>
         <div className="image-container top-item">
-          <img src="images/test-image.JPG" alt="yoda" />
+          <img src="images/home-artist.jpg" alt="artist" />
         </div>
       </div>
     </div>

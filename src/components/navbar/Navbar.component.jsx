@@ -94,7 +94,7 @@ export const Header = ({ children }) => {
 export const Play = () => {
   return (
     <div className="logo">
-      <p> listen now</p>
+      <p> Join</p>
       <div className="svg-round">
         <PlayIcon />
       </div>
