@@ -65,7 +65,7 @@ export const Navbar = () => {
             </li>
             <li>
               <NavLink
-                to="/listen-now"
+                to="/login"
                 style={({ isActive }) => (isActive ? activeStyle : undefined)}
                 className="link"
               >
@@ -157,7 +157,7 @@ export const NavDropDown = ({ handleClick }) => {
         </li>
         <li>
           <NavLink
-            to="/listen-now"
+            to="/login"
             style={({ isActive }) => (isActive ? activeStyle : undefined)}
             className="link"
           >

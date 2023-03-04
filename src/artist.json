@@ -1,8 +1,17 @@
 [
   {
-    "id": "lola",
-    "name": "Lola",
-    "location": ["Lagos", "Abuja", "Kano", "Jos"],
+    "id": "Wizkid",
+    "name": "wizkid",
+    "location": [
+      {
+        "name": "lagos",
+        "image": "https://media.pitchfork.com/photos/6373f367534fca4b20f5cddb/2:1/w_2560%2Cc_limit/Wizkid.jpg"
+      },
+      {
+        "name": "paris",
+        "image": "https://cutt.ly/H8EywW3"
+      }
+    ],
     "spotlight": [
       "/images/9jastar /head.jpg",
       "/images/9jastar /9ja5.jpg",
@@ -10,49 +19,7 @@
       "/images/9jastar /head.jpg"
     ],
     "listens": 2000,
-    "mainImage": "/images/9jastar /9ja3.jpg",
+    "mainImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyq5H5sPx0hm26yw7W1C4cuxTy2TbdSLQ-Iw&usqp=CAU",
     "currentListens": 200
-  },
-  {
-    "id": "Janeme",
-    "name": "Janeme",
-    "location": ["Lagos", "Abuja", "Kano", "Jos"],
-    "spotlight": [
-      "/images/9jastar/9ja8.jpg",
-      "/images/9jastar/9ja9.jpg",
-      "/images/9jastar/9ja.jpg",
-      "/images/9jastar/9ja2.jpg"
-    ],
-    "listens": 3000,
-    "mainImage": "/images/9jastar /9ja5.jpg",
-    "currentListens": 500
-  },
-  {
-    "id": "Yvonne",
-    "name": "Yvonne",
-    "location": ["Lagos", "Abuja", "Kano", "Jos"],
-    "spotlight": [
-      "/images/9jastar/910.jpg",
-      "/images/9jastar/913.jpg",
-      "/images/9jastar/915.jpg",
-      "/images/9jastar/916.jpg"
-    ],
-    "listens": 350,
-    "mainImage": "/images/9jastar /911.jpg",
-    "currentListens": 200000
-  },
-  {
-    "id": "Starr",
-    "name": "Starr",
-    "location": ["Lagos", "Abuja", "Kano", "Jos"],
-    "spotlight": [
-      "/images/9jastar/9ja5.jpg",
-      "/images/9jastar/9ja3.jpg",
-      "/images/9jastar/9ja4.jpg",
-      "/images/9jastar/9ja7.jpg"
-    ],
-    "listens": 24500,
-    "mainImage": "/images/home-artist.jpg",
-    "currentListens": 45500
   }
 ]

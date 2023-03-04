@@ -160,6 +160,7 @@ h6 {
 .btn-wd-fit-content {
   max-width: fit-content;
 }
+
 /* LAYOUT STYLES */
 .gd {
   display: grid;

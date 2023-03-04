@@ -6,6 +6,9 @@ import {
   CardRound,
 } from "../../components/cards/Card.component";
 import artists from "../../../src/artist.json";
+import albums from "../../../src/albums.json";
+import mood from "../../../src/mood.json";
+
 export const ExploreMusic = () => {
   return (
     <>
@@ -14,11 +17,15 @@ export const ExploreMusic = () => {
           <ExploreMusicHeader />
         </header>
         <main className="explore-music-items">
-          <Carousel title={"Top Trending Artist"}>
-            <CardLg />
-            <CardLg />
-            <CardLg />
-            <CardLg />
+          <Carousel title={"Trending Release"}>
+            {albums.map((element, index) => (
+              <CardLg
+                key={index}
+                image={element["album-art"]}
+                heading={element["artist-name"]}
+                text={element.title}
+              />
+            ))}
           </Carousel>
           <Carousel title={"Your Library"}>
             <CardLg />
@@ -27,12 +34,9 @@ export const ExploreMusic = () => {
             <CardLg />
           </Carousel>
           <Carousel title={"What Is Your Mood?"}>
-            <CardImage />
-            <CardImage />
-            <CardImage />
-            <CardImage />
-            <CardImage />
-            <CardImage />
+            {mood.map(({ image, mood }, index) => (
+              <CardImage key={index} image={image} heading={mood} />
+            ))}
           </Carousel>
           <Carousel title={"Top Trending Artist"}>
             {artists.map((element, index) => (

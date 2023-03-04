@@ -53,8 +53,8 @@ export const DashboardHeader = () => {
       <div className="dashboard-wrapper">
         <h3 className="pd-20"> FAST RISING GEOGRAPHY</h3>
         <div className="dashboard-section-container">
-          {location.map((element, index) => (
-            <DashboardCard title={element} image={mainImage} key={index} />
+          {location.map(({ name, image }, index) => (
+            <DashboardCard title={name} image={image} key={index} />
           ))}
         </div>
       </div>
@@ -66,7 +66,7 @@ export const DashboardCard = ({ title, image }) => {
     <div className="cardImage-container-dashboard block">
       <img src={image} alt="yoda" />
       <div className="cardImage-text-dashboard">
-        {title !== "" && <h3 className="bg-black">{title}</h3>}
+        {title !== "" && <h3 className="bg-black mg-10">{title}</h3>}
       </div>
     </div>
   );

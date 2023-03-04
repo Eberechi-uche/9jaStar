@@ -11,25 +11,25 @@ export const ScrollLayout = ({ children, title }) => {
   );
 };
 
-export const CardLg = () => {
+export const CardLg = ({ image, heading, text }) => {
   return (
     <div className="cardLg-container">
       <div className="cardLg-image-container">
-        <img src="images/test-image.JPG" alt="yoda"></img>
+        <img src={image} alt={text}></img>
       </div>
       <div>
-        <h4>God Dey</h4>
-        <p className="text-col-grey-light">Lumina</p>
+        <h4>{heading}</h4>
+        <p className="text-col-grey-light">{text}</p>
       </div>
     </div>
   );
 };
-export const CardImage = ({ cardtitle }) => {
+export const CardImage = ({ image, heading }) => {
   return (
     <div className="cardImage-container">
-      <img src="images/test-image.JPG" alt="yoda" />
+      <img src={image} alt={heading} />
       <div className="cardImage-text">
-        <h3>WORK OUT</h3>
+        <h3>{heading}</h3>
       </div>
     </div>
   );
