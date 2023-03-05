@@ -1,25 +1,209 @@
 [
   {
     "id": "Wizkid",
-    "name": "wizkid",
+    "name": "Wizkid",
     "location": [
       {
         "name": "lagos",
-        "image": "https://media.pitchfork.com/photos/6373f367534fca4b20f5cddb/2:1/w_2560%2Cc_limit/Wizkid.jpg"
+        "image": "https://rb.gy/akhutd"
       },
       {
         "name": "paris",
-        "image": "https://cutt.ly/H8EywW3"
+        "image": "https://rb.gy/3qqbb3"
       }
     ],
     "spotlight": [
-      "/images/9jastar /head.jpg",
-      "/images/9jastar /9ja5.jpg",
-      "/images/9jastar /9ja9.jpg",
-      "/images/9jastar /head.jpg"
+      "https://rb.gy/gzqols",
+      "https://rb.gy/sylnt2",
+      "https://rb.gy/jb3img",
+      "https://rb.gy/kbl0cu"
     ],
     "listens": 2000,
-    "mainImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyq5H5sPx0hm26yw7W1C4cuxTy2TbdSLQ-Iw&usqp=CAU",
+    "mainImage": "https://rb.gy/pulx6p",
+    "currentListens": 200
+  },
+  {
+    "id": "Davido",
+    "name": "Davido",
+    "location": [
+      {
+        "name": "lagos",
+        "image": "https://rb.gy/ruzudt"
+      },
+      {
+        "name": "london",
+        "image": "https://rb.gy/igfk6i"
+      }
+    ],
+    "spotlight": [
+      "https://rb.gy/k0odiq",
+      "https://rb.gy/4rpvdq",
+      "https://rb.gy/ol5vte",
+      "https://rb.gy/vmfiox"
+    ],
+    "listens": 2000,
+    "mainImage": "https://rb.gy/jliuu7",
+    "currentListens": 200
+  },
+  {
+    "id": "burna boy",
+    "name": "burna boy",
+    "location": [
+      {
+        "name": "France",
+        "image": "https://rb.gy/5nh0zk"
+      },
+      {
+        "name": "Los Angeles",
+        "image": "https://rb.gy/cm7ejz"
+      }
+    ],
+    "spotlight": [
+      "https://rb.gy/raxfwe",
+      "https://rb.gy/966plp",
+      "https://rb.gy/7sra8x",
+      "https://rb.gy/geqgn1"
+    ],
+    "listens": 2000,
+    "mainImage": "https://rb.gy/3zrlwu",
+    "currentListens": 200
+  },
+  {
+    "id": "Tems",
+    "name": "Tems",
+    "location": [
+      {
+        "name": "lagos",
+        "image": "https://rb.gy/cqri5o"
+      },
+      {
+        "name": "Los Angeles",
+        "image": "https://rb.gy/ewvjoq"
+      }
+    ],
+    "spotlight": [
+      "https://rb.gy/m1pmge",
+      "https://rb.gy/vim8lr",
+      "https://rb.gy/klhxol",
+      "https://rb.gy/cqri5o"
+    ],
+    "listens": 2000,
+    "mainImage": "https://rb.gy/mrl0lf",
+    "currentListens": 200
+  },
+  {
+    "id": "Fireboy dml",
+    "name": "Fireboy dml",
+    "location": [
+      {
+        "name": "lagos",
+        "image": "https://rb.gy/kpg5po"
+      },
+      {
+        "name": "Los Angeles",
+        "image": "https://rb.gy/zlxodq"
+      }
+    ],
+    "spotlight": [
+      "https://rb.gy/zlxodq",
+      "https://rb.gy/kpg5po",
+      "https://rb.gy/rfczuh",
+      "https://rb.gy/kzpcon"
+    ],
+    "listens": 2000,
+    "mainImage": "https://rb.gy/wvkchm",
+    "currentListens": 200
+  },
+  {
+    "id": "Tiwa savage",
+    "name": "Tiwa savage",
+    "location": [
+      {
+        "name": "lagos",
+        "image": "https://rb.gy/fdvuad"
+      },
+      {
+        "name": "london",
+        "image": "https://rb.gy/zufqtz"
+      }
+    ],
+    "spotlight": [
+      "https://rb.gy/zqfikm",
+      "https://rb.gy/btaplr",
+      "https://rb.gy/bmjlue",
+      "https://rb.gy/fdvuad"
+    ],
+    "listens": 2000,
+    "mainImage": "https://rb.gy/zbr3ly",
+    "currentListens": 200
+  },
+  {
+    "id": "Omah Lay",
+    "name": "Omah Lay",
+    "location": [
+      {
+        "name": "lagos",
+        "image": "https://rb.gy/jbba40"
+      },
+      {
+        "name": "london",
+        "image": "https://rb.gy/rlbkym"
+      }
+    ],
+    "spotlight": [
+      "https://rb.gy/rlbkym",
+      "https://rb.gy/jbba40",
+      "https://rb.gy/yguyyr",
+      "https://rb.gy/yguyyr"
+    ],
+    "listens": 2000,
+    "mainImage": "https://rb.gy/w3rd1s",
+    "currentListens": 200
+  },
+  {
+    "id": "Ayra Starr",
+    "name": "Ayra Starr",
+    "location": [
+      {
+        "name": "lagos",
+        "image": "https://rb.gy/e6g8wk"
+      },
+      {
+        "name": "london",
+        "image": "https://rb.gy/8n4ytu"
+      }
+    ],
+    "spotlight": [
+      "https://rb.gy/8n4ytu",
+      "https://rb.gy/ulh0oa",
+      "https://rb.gy/ulh0oa",
+      "https://rb.gy/e6g8wk"
+    ],
+    "listens": 2000,
+    "mainImage": "https://rb.gy/8n4ytu",
+    "currentListens": 200
+  },
+  {
+    "id": "Kizz Daniel",
+    "name": "Kizz Daniel",
+    "location": [
+      {
+        "name": "lagos",
+        "image": "https://rb.gy/nmuxyc"
+      },
+      {
+        "name": "Qatar",
+        "image": "https://rb.gy/vjcnbl"
+      }
+    ],
+    "spotlight": [
+      "https://rb.gy/zxfuee",
+      "https://rb.gy/izf2rk",
+      "https://rb.gy/nmuxyc",
+      "https://rb.gy/vjcnbl"
+    ],
+    "listens": 2000,
+    "mainImage": "https://rb.gy/rqw336",
     "currentListens": 200
   }
 ]
