@@ -1,10 +1,18 @@
 import { Link } from "react-router-dom";
 import { Form, Input } from "../../components/Form/Form.component";
+import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
+import { auth } from "../../Utils/firebase/firebase.utils";
+import { useNavigate } from "react-router-dom";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { userContext } from "../../context/user.context";
 
 import "./auth.styles.css";
-import { useState } from "react";
+import { useEffect, useState, useContext } from "react";
 
 export const SignUp = () => {
+  const navigate = useNavigate();
+  const role = useContext(userContext);
+  const [userError, setUserError] = useState("");
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -13,17 +21,35 @@ export const SignUp = () => {
   const [hide, setHide] = useState(true);
   const show = hide ? "password" : "text";
 
+  const [createUserWithEmailAndPassword, user, loading, error] =
+    useCreateUserWithEmailAndPassword(auth);
+
   const handleOnChange = (e) => {
     e.preventDefault();
     setFormData((prev) => ({
       ...prev,
       [e.target.name]: e.target.value,
     }));
-    console.log(formData);
   };
   const handleShowPassword = () => {
     setHide(!hide);
   };
+  const handleSignUp = (e) => {
+    e.preventDefault();
+    setUserError("");
+    const { confirmPassword, password, email } = formData;
+    if (confirmPassword !== password) {
+      setUserError("! password do not match");
+    }
+
+    createUserWithEmailAndPassword(email, password);
+  };
+  useEffect(() => {
+    if (user) {
+      navigate("/explore-music");
+    }
+  }, [user]);
+
   return (
     <div className="login-wrapper">
       <div className="auth-form-container">
@@ -34,7 +60,12 @@ export const SignUp = () => {
             <span>Login</span>
           </Link>
         </p>
-        <Form title={"Login"} action={"Login"}>
+        <Form
+          title={"Login"}
+          action={"Login"}
+          onSubmit={handleSignUp}
+          isLoading={loading}
+        >
           <Input
             label={"Email"}
             type="email"
@@ -60,6 +91,16 @@ export const SignUp = () => {
             onChange={handleOnChange}
             hide={hide}
           />
+          {userError ||
+            (error && (
+              <p
+                style={{
+                  color: "var(--error)",
+                }}
+              >
+                {userError || error}
+              </p>
+            ))}
         </Form>
       </div>
 

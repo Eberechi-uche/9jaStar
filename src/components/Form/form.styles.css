@@ -41,6 +41,9 @@
 .input-field:focus {
   outline: none;
 }
+.input-field :active {
+  background-color: transparent;
+}
 .btn-fill {
   background-color: var(--secondary);
   width: 60%;
@@ -62,4 +65,7 @@
 .form-footer-icon img {
   width: 30px;
   height: 30px;
+}
+input:active {
+  background-color: transparent;
 }

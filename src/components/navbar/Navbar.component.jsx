@@ -4,6 +4,9 @@ import { HamburgerIcon } from "../../svg/Hamburger.svg";
 import { NavLink, Outlet } from "react-router-dom";
 import { useState, useLayoutEffect, useRef } from "react";
 import { gsap } from "gsap";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { auth } from "../../Utils/firebase/firebase.utils";
+import { signOut } from "@firebase/auth";
 
 export const Navbar = () => {
   const [showNav, setShowNav] = useState(false);
@@ -64,13 +67,7 @@ export const Navbar = () => {
               </NavLink>
             </li>
             <li>
-              <NavLink
-                to="/login"
-                style={({ isActive }) => (isActive ? activeStyle : undefined)}
-                className="link"
-              >
-                <Play />
-              </NavLink>
+              <Icon />
             </li>
           </ul>
         </div>
@@ -91,15 +88,35 @@ export const Header = ({ children }) => {
     </>
   );
 };
-export const Play = () => {
-  return (
-    <div className="logo">
-      <p> Join</p>
-      <div className="svg-round">
-        <PlayIcon />
-      </div>
+
+export const Icon = () => {
+  const [user] = useAuthState(auth);
+  let activeStyle = {
+    color: "#5ebb3b",
+  };
+  const view = !user ? (
+    <>
+      <NavLink
+        to="/login"
+        style={({ isActive }) => (isActive ? activeStyle : undefined)}
+        className="link"
+      >
+        <div className="logo">
+          <p> Join</p>
+          <div className="svg-round">
+            <PlayIcon />
+          </div>
+        </div>
+      </NavLink>
+    </>
+  ) : (
+    <div>
+      <p className="logo" onClick={() => signOut(auth)}>
+        sign out
+      </p>
     </div>
   );
+  return <>{view}</>;
 };
 
 export const NavDropDown = ({ handleClick }) => {
@@ -156,13 +173,7 @@ export const NavDropDown = ({ handleClick }) => {
           </NavLink>
         </li>
         <li>
-          <NavLink
-            to="/login"
-            style={({ isActive }) => (isActive ? activeStyle : undefined)}
-            className="link"
-          >
-            <Play />
-          </NavLink>
+          <Icon />
         </li>
       </ul>
     </div>

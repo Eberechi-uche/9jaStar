@@ -1,17 +1,19 @@
 import "./form.styles.css";
+import BeatLoader from "react-spinners/BeatLoader";
 
-export const Form = ({ children, title, action, click, description }) => {
+export const Form = ({ children, action, click, onSubmit, isLoading }) => {
   return (
     <div className="form-wrapper">
-      <form className="form-container">
+      <form className="form-container" onSubmit={onSubmit}>
         {children}
         <button
           type="submit"
           onClick={click}
           className="btn btn-round btn-fill"
         >
-          {action}
+          {isLoading === true ? <BeatLoader color="#d8e9e5" /> : action}
         </button>
+
         <p className="pd-10"> OR </p>
         <div className="form-footer-icon">
           <img src="images/google.png" />
