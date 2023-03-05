@@ -31,6 +31,17 @@
   height: 100%;
   object-fit: cover;
 }
+
+.role-selector-container {
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  color: var(--white);
+}
+
 @media screen and (max-width: 600px) {
   .auth-image-container {
     display: none;

@@ -1,10 +1,12 @@
 import { Form, Input } from "../../components/Form/Form.component";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import "./auth.styles.css";
 import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { useNavigate } from "react-router-dom";
 import { auth } from "../../Utils/firebase/firebase.utils";
+import { Role } from "./Role";
+import { profile } from "../../context/UserProfile";
 
 export const Login = () => {
   const navigate = useNavigate();
@@ -16,7 +18,11 @@ export const Login = () => {
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
 
+  // Variables
   const show = hide ? "password" : "text";
+  const { role } = useContext(profile);
+
+  //   click Handlers
   const handleOnChange = (e) => {
     e.preventDefault();
     setFormData((prev) => ({
@@ -33,6 +39,9 @@ export const Login = () => {
     const { password, email } = formData;
     signInWithEmailAndPassword(email, password);
   };
+
+  //   effects
+
   useEffect(() => {
     if (user) {
       navigate("/explore-music");
@@ -41,43 +50,47 @@ export const Login = () => {
 
   return (
     <div className="login-wrapper">
-      <div className="auth-form-container">
-        <h2>Login</h2>
+      {role.length > 2 && (
+        <>
+          <div className="auth-form-container">
+            <h2>Login</h2>
 
-        <p>
-          dont have an account ?
-          <Link to={"/sign-up"} className="link">
-            <span>Sign up</span>
-          </Link>
-        </p>
-        <Form
-          title={"Login"}
-          action={"Login"}
-          onSubmit={HandleLogin}
-          isLoading={loading}
-        >
-          <Input
-            label={"Email"}
-            type="email"
-            required
-            name="email"
-            onChange={handleOnChange}
-          />
-          <Input
-            label={"password"}
-            type={show}
-            required
-            click={handleShowPassword}
-            name="password"
-            onChange={handleOnChange}
-            hide={hide}
-          />
-        </Form>
-      </div>
+            <p>
+              dont have an account ?
+              <Link to={"/sign-up"} className="link">
+                <span>Sign up</span>
+              </Link>
+            </p>
+            <Form
+              title={"Login"}
+              action={"Login"}
+              onSubmit={HandleLogin}
+              isLoading={loading}
+            >
+              <Input
+                label={"Email"}
+                type="email"
+                required
+                name="email"
+                onChange={handleOnChange}
+              />
+              <Input
+                label={"password"}
+                type={show}
+                required
+                click={handleShowPassword}
+                name="password"
+                onChange={handleOnChange}
+              />
+            </Form>
+          </div>
 
-      <div className="auth-image-container">
-        <img src="images/dance.jpg" alt="decorativ" />
-      </div>
+          <div className="auth-image-container">
+            <img src="images/dance.jpg" alt="decorativ" />
+          </div>
+        </>
+      )}
+      {role === "" && <Role action={"Login"} />}
     </div>
   );
 };

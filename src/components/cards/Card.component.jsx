@@ -24,9 +24,9 @@ export const CardLg = ({ image, heading, text }) => {
     </div>
   );
 };
-export const CardImage = ({ image, heading }) => {
+export const CardImage = ({ image, heading, onClick }) => {
   return (
-    <div className="cardImage-container">
+    <div className="cardImage-container" onClick={onClick}>
       <img src={image} alt={heading} />
       <div className="cardImage-text">
         <h3>{heading}</h3>
@@ -46,6 +46,14 @@ export const CardRound = ({ artistId }) => {
           <h4>{name}</h4>
         </div>
       </Link>
+    </div>
+  );
+};
+
+export const CardProfile = ({ image }) => {
+  return (
+    <div className="cardRound-container-sm">
+      <img src={image} alt={"profile"} />
     </div>
   );
 };

@@ -2,13 +2,16 @@ import "./navbar.styles.css";
 import { PlayIcon } from "../../svg/PlayIcon.svg";
 import { HamburgerIcon } from "../../svg/Hamburger.svg";
 import { NavLink, Outlet } from "react-router-dom";
-import { useState, useLayoutEffect, useRef } from "react";
+import { useState, useLayoutEffect, useRef, useContext } from "react";
 import { gsap } from "gsap";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../../Utils/firebase/firebase.utils";
 import { signOut } from "@firebase/auth";
+import { profile } from "../../context/UserProfile";
+import { CardProfile } from "../cards/Card.component";
 
 export const Navbar = () => {
+  const { role } = useContext(profile);
   const [showNav, setShowNav] = useState(false);
   const toggleNav = () => {
     setShowNav(!showNav);
@@ -48,24 +51,29 @@ export const Navbar = () => {
                 Expolore Music
               </NavLink>
             </li>
-            <li>
-              <NavLink
-                to="/fan-request"
-                style={({ isActive }) => (isActive ? activeStyle : undefined)}
-                className="link"
-              >
-                Fan request
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/partner-with-us"
-                style={({ isActive }) => (isActive ? activeStyle : undefined)}
-                className="link"
-              >
-                Partner With us
-              </NavLink>
-            </li>
+            {role === "User" && (
+              <li>
+                <NavLink
+                  to="/fan-request"
+                  style={({ isActive }) => (isActive ? activeStyle : undefined)}
+                  className="link"
+                >
+                  Fan request
+                </NavLink>
+              </li>
+            )}
+            {role === "User" && (
+              <li>
+                <NavLink
+                  to="/partner-with-us"
+                  style={({ isActive }) => (isActive ? activeStyle : undefined)}
+                  className="link"
+                >
+                  Partner With us
+                </NavLink>
+              </li>
+            )}
+
             <li>
               <Icon />
             </li>
@@ -90,7 +98,9 @@ export const Header = ({ children }) => {
 };
 
 export const Icon = () => {
+  const { role } = useContext(profile);
   const [user] = useAuthState(auth);
+
   let activeStyle = {
     color: "#5ebb3b",
   };
@@ -110,16 +120,25 @@ export const Icon = () => {
       </NavLink>
     </>
   ) : (
-    <div>
-      <p className="logo" onClick={() => signOut(auth)}>
-        sign out
-      </p>
+    <div
+      className="logo"
+      onClick={() => {
+        signOut(auth);
+      }}
+    >
+      <p> Log out</p>
+      <div className="svg-round">
+        <CardProfile
+          image={role === "User" ? "images/user.jpg" : "images/artist.jpeg"}
+        />
+      </div>
     </div>
   );
   return <>{view}</>;
 };
 
 export const NavDropDown = ({ handleClick }) => {
+  const { role } = useContext(profile);
   const navSlide = useRef();
   let activeStyle = {
     color: "#5ebb3b",
@@ -154,24 +173,29 @@ export const NavDropDown = ({ handleClick }) => {
             Expolore Music
           </NavLink>
         </li>
-        <li>
-          <NavLink
-            to="/fan-request"
-            style={({ isActive }) => (isActive ? activeStyle : undefined)}
-            className="link"
-          >
-            Fan request
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
-            to="/partner-with-us"
-            style={({ isActive }) => (isActive ? activeStyle : undefined)}
-            className="link"
-          >
-            Partner With us
-          </NavLink>
-        </li>
+        {role === "User" && (
+          <li>
+            <NavLink
+              to="/fan-request"
+              style={({ isActive }) => (isActive ? activeStyle : undefined)}
+              className="link"
+            >
+              Fan request
+            </NavLink>
+          </li>
+        )}
+        {role === "User" && (
+          <li>
+            <NavLink
+              to="/partner-with-us"
+              style={({ isActive }) => (isActive ? activeStyle : undefined)}
+              className="link"
+            >
+              Partner With us
+            </NavLink>
+          </li>
+        )}
+
         <li>
           <Icon />
         </li>

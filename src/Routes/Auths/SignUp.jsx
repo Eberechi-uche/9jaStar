@@ -3,15 +3,15 @@ import { Form, Input } from "../../components/Form/Form.component";
 import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { auth } from "../../Utils/firebase/firebase.utils";
 import { useNavigate } from "react-router-dom";
-import { useAuthState } from "react-firebase-hooks/auth";
-import { userContext } from "../../context/user.context";
+import { profile } from "../../context/UserProfile";
+import { Role } from "./Role";
 
 import "./auth.styles.css";
 import { useEffect, useState, useContext } from "react";
 
 export const SignUp = () => {
+  const { role } = useContext(profile);
   const navigate = useNavigate();
-  const role = useContext(userContext);
   const [userError, setUserError] = useState("");
   const [formData, setFormData] = useState({
     email: "",
@@ -48,65 +48,69 @@ export const SignUp = () => {
     if (user) {
       navigate("/explore-music");
     }
-  }, [user]);
+  }, [user, navigate]);
 
   return (
     <div className="login-wrapper">
-      <div className="auth-form-container">
-        <h2>Get Started</h2>
-        <p>
-          Already have an account ?
-          <Link to={"/login"} className="link">
-            <span>Login</span>
-          </Link>
-        </p>
-        <Form
-          title={"Login"}
-          action={"Login"}
-          onSubmit={handleSignUp}
-          isLoading={loading}
-        >
-          <Input
-            label={"Email"}
-            type="email"
-            required
-            name="email"
-            onChange={handleOnChange}
-          />
-          <Input
-            label={"password"}
-            type={show}
-            required
-            click={handleShowPassword}
-            name="password"
-            onChange={handleOnChange}
-            hide={hide}
-          />
-          <Input
-            label={"password"}
-            type={show}
-            required
-            click={handleShowPassword}
-            name="confirmPassword"
-            onChange={handleOnChange}
-            hide={hide}
-          />
-          {userError ||
-            (error && (
-              <p
-                style={{
-                  color: "var(--error)",
-                }}
-              >
-                {userError || error}
-              </p>
-            ))}
-        </Form>
-      </div>
+      {role.length > 1 && (
+        <>
+          <div className="auth-form-container">
+            <h2>Get Started</h2>
+            <p>
+              Already have an account ?
+              <Link to={"/login"} className="link">
+                <span>Login</span>
+              </Link>
+            </p>
+            <Form
+              title={"Login"}
+              action={"Login"}
+              onSubmit={handleSignUp}
+              isLoading={loading}
+            >
+              <Input
+                label={"Email"}
+                type="email"
+                required
+                name="email"
+                onChange={handleOnChange}
+              />
+              <Input
+                label={"password"}
+                type={show}
+                required
+                click={handleShowPassword}
+                name="password"
+                onChange={handleOnChange}
+              />
+              <Input
+                label={"password"}
+                type={show}
+                required
+                click={handleShowPassword}
+                name="confirmPassword"
+                onChange={handleOnChange}
+              />
+              {userError ||
+                (error && (
+                  <p
+                    style={{
+                      color: "var(--error)",
+                    }}
+                  >
+                    {userError || error}
+                  </p>
+                ))}
+            </Form>
+          </div>
 
-      <div className="auth-image-container">
-        <img src="images/singer.jpg" alt="artist" />
-      </div>
+          <div className="auth-image-container">
+            <img src="images/singer.jpg" alt="artist" />
+          </div>
+        </>
+      )}
+
+      {role.length < 1 && <Role />}
     </div>
   );
 };

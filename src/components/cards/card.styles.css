@@ -71,3 +71,16 @@
   margin: 10px;
   display: inline-block;
 }
+.cardRound-container-sm {
+  color: white;
+  height: 35px;
+  width: 35px;
+  border-radius: 100px;
+  overflow: hidden;
+  margin: 10px;
+}
+.cardRound-container-sm img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
