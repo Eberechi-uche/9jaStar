@@ -16,7 +16,7 @@ export const ExploreMusic = () => {
   return (
     <>
       <div className="explore-music-wrapper">
-        <header className="explore-header-container">
+        {/* <header className="explore-header-container">
           <SliderCarousel>
             <SliderCarouselItem>
               <img src="images/wizkid.jpg" alt="wizkid" className="img-fill" />
@@ -28,7 +28,7 @@ export const ExploreMusic = () => {
               <img src="images/cavemen.png" alt="wizkid" className="img-fill" />
             </SliderCarouselItem>
           </SliderCarousel>
-        </header>
+        </header> */}
         <main className="explore-music-items">
           <Carousel title={"Trending Release"}>
             {albums.map((element, index) => (
@@ -47,7 +47,7 @@ export const ExploreMusic = () => {
               text={"Date: july 1"}
             />
           </Carousel>
-          <Carousel title={"What Is Your Mood?"}>
+          <Carousel title={"What Is Your Genre?"}>
             {mood.map(({ image, mood }, index) => (
               <CardImage key={index} image={image} heading={mood} />
             ))}

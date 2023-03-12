@@ -13,7 +13,8 @@
   padding: 0 20px;
 }
 .auth-form-container {
-  padding: 20px;
+  width: 100%;
+  padding: 20px 70px;
   color: var(--white);
 }
 .auth-form-container .link {
@@ -25,6 +26,7 @@
   overflow: hidden;
   margin: 20px;
   border-radius: 15px;
+  width: 70%;
 }
 .auth-image-container img {
   width: 100%;

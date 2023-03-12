@@ -5,8 +5,6 @@ import "./auth.styles.css";
 import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { useNavigate } from "react-router-dom";
 import { auth } from "../../Utils/firebase/firebase.utils";
-import { Role } from "./Role";
-import { profile } from "../../context/UserProfile";
 
 export const Login = () => {
   const navigate = useNavigate();
@@ -20,7 +18,6 @@ export const Login = () => {
 
   // Variables
   const show = hide ? "password" : "text";
-  const { role } = useContext(profile);
 
   //   click Handlers
   const handleOnChange = (e) => {
@@ -50,47 +47,42 @@ export const Login = () => {
 
   return (
     <div className="login-wrapper">
-      {role.length > 2 && (
-        <>
-          <div className="auth-form-container">
-            <h2>Login</h2>
+      <div className="auth-form-container">
+        <h2>Login</h2>
 
-            <p>
-              dont have an account ?
-              <Link to={"/sign-up"} className="link">
-                <span>Sign up</span>
-              </Link>
-            </p>
-            <Form
-              title={"Login"}
-              action={"Login"}
-              onSubmit={HandleLogin}
-              isLoading={loading}
-            >
-              <Input
-                label={"Email"}
-                type="email"
-                required
-                name="email"
-                onChange={handleOnChange}
-              />
-              <Input
-                label={"password"}
-                type={show}
-                required
-                click={handleShowPassword}
-                name="password"
-                onChange={handleOnChange}
-              />
-            </Form>
-          </div>
+        <p>
+          dont have an account ?
+          <Link to={"/sign-up"} className="link">
+            <span>Sign up</span>
+          </Link>
+        </p>
+        <Form
+          title={"Login"}
+          action={"Login"}
+          onSubmit={HandleLogin}
+          isLoading={loading}
+        >
+          <Input
+            label={"Email"}
+            type="email"
+            required
+            name="email"
+            onChange={handleOnChange}
+          />
+          <Input
+            label={"password"}
+            type={show}
+            required
+            click={handleShowPassword}
+            name="password"
+            onChange={handleOnChange}
+          />
+        </Form>
+      </div>
 
-          <div className="auth-image-container">
-            <img src="images/dance.jpg" alt="decorativ" />
-          </div>
-        </>
-      )}
-      {role === "" && <Role action={"Login"} />}
+      <div className="auth-image-container">
+        <img src="images/dance.jpg" alt="decorativ" />
+      </div>
     </div>
   );
 };

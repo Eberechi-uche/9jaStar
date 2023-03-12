@@ -54,7 +54,7 @@ export const Hero = () => {
           create positive change in the world. Through our website, we aim to
           spread the joy of music and connect fans with the artists they love.
         </p>
-        <Link className="link" to={"/explore-music"}>
+        <Link to={"/login"}>
           <button className="btn bg-tertiary-purple btn-round text-col-white">
             Get started
           </button>
