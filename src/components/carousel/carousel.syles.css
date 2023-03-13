@@ -14,3 +14,6 @@
   white-space: nowrap;
   scroll-snap-type: x proximity;
 }
+.carousel-wrapper ::-webkit-scrollbar {
+  display: none;
+}

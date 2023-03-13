@@ -1,3 +1,7 @@
+.home-header {
+  background-color: #280e23;
+}
+
 .hero-container {
   display: grid;
   place-items: center;
@@ -40,4 +44,14 @@ button {
 }
 .image-container:hover {
   transform: scale(1.1);
+}
+.home-text {
+  text-align: center;
+  padding: 50px 10px 20px;
+  color: #fff;
+}
+.card-section {
+  overflow: auto;
+  white-space: nowrap;
+  scroll-snap-type: x proximity;
 }

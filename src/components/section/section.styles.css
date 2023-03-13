@@ -22,12 +22,12 @@
 }
 .section-text-container {
   display: grid;
-  place-content: center;
   text-align: left;
+  padding: 20px;
 }
 .user-testimony-wrapper {
-  color: var(--grey-light);
-  background: linear-gradient(180.64deg, #e279f2 -5.46%, #30143d 72.02%);
+  color: var(--primary);
+  background-color: #fff;
   text-align: center;
   width: 100vw;
   height: fit-content;
@@ -48,4 +48,10 @@
   height: 83px;
   object-fit: cover;
   border-radius: 100px;
+}
+@media screen and (max-width: 600px) {
+  .section-text-container {
+    text-align: center;
+    place-items: center;
+  }
 }

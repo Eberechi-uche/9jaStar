@@ -49,6 +49,10 @@
     display: none;
   }
   .login-wrapper {
-    grid-template-columns: 100%;
+    grid-template-columns: 1fr;
+  }
+  .auth-form-container {
+    width: 100%;
+    padding: 10px;
   }
 }

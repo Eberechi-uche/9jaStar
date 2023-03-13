@@ -81,7 +81,7 @@ export const Login = () => {
       </div>
 
       <div className="auth-image-container">
-        <img src="images/dance.jpg" alt="decorativ" />
+        <img src="images/dance.jpg" alt="decorative" />
       </div>
     </div>
   );

@@ -57,3 +57,20 @@ export const CardProfile = ({ image }) => {
     </div>
   );
 };
+export const CardLgHome = ({ image, children, heading }) => {
+  return (
+    <div className="cardLg-wrapper-home">
+      <div className="cardLg-container-home">
+        <div className="cardLg-image-container-home">
+          <img src={image} alt="deco" />
+          <div className="cardImage-text-home">
+            <p>{heading}</p>
+          </div>
+        </div>
+        <div className="cardLg-text-container-home">
+          <p>{children}</p>
+        </div>
+      </div>
+    </div>
+  );
+};
