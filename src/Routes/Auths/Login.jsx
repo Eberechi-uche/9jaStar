@@ -81,7 +81,7 @@ export const Login = () => {
       </div>
 
       <div className="auth-image-container ">
-        <img src="/images/login.svg" alt="decorative" />
+        <img src="/images/login.webp" alt="decorative" />
       </div>
     </div>
   );

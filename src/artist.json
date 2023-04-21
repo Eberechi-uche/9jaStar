@@ -19,7 +19,7 @@
       "https://rb.gy/kbl0cu"
     ],
     "listens": 2000,
-    "mainImage": "/images/lola.svg",
+    "mainImage": "/images/lola.webp",
     "currentListens": 200
   },
   {
@@ -88,7 +88,7 @@
       "https://rb.gy/cqri5o"
     ],
     "listens": 2000,
-    "mainImage": "/images/grace.svg",
+    "mainImage": "/images/grace.webp",
     "currentListens": 200
   },
   {
@@ -111,7 +111,7 @@
       "https://rb.gy/kzpcon"
     ],
     "listens": 2000,
-    "mainImage": "/images/starr.svg",
+    "mainImage": "/images/starr.webp",
     "currentListens": 200
   }
 ]

@@ -100,7 +100,7 @@ export const SignUp = () => {
       </div>
 
       <div className="auth-image-container">
-        <img src="/images/sign-up.svg" alt="artist" />
+        <img src="/images/sign-up.webp" alt="artist" />
       </div>
     </div>
   );

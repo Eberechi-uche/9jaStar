@@ -18,7 +18,7 @@ export const Home = () => {
       </Header>
 
       <div className="logo-container">
-        <img src="/images/homepageLogo.svg" alt={"logo"} />
+        <img src="/images/homepageLogo.webp" alt={"logo"} />
       </div>
       <SectionLayout>
         <SectionText>
@@ -38,20 +38,20 @@ export const Home = () => {
         <h2> why choose us</h2>
         <Carousel>
           <CardLgHome
-            image={"/images/laddyholdingPhone.svg"}
+            image={"/images/laddyholdingPhone.webp"}
             heading={"free uploads"}
           >
             upload up to 100 songs
           </CardLgHome>
           <CardLgHome
-            image={"/images/ladywithEarpiece.svg"}
+            image={"/images/laddywithheadphone.png"}
             heading={"Great Audience reach"}
           >
             "our fast growing platform makes it easier to expand and enhance
             your reach"
           </CardLgHome>
           <CardLgHome
-            image={"/images/manwithphone.svg"}
+            image={"/images/manwithphone.webp"}
             heading={"features that work"}
           >
             with the goal of empowering artist, 9jastar gives you more ways of
@@ -95,10 +95,10 @@ export const Hero = () => {
       </div>
       <div className="image-container-wrapper ">
         <div className="image-container right-item">
-          <img src="/images/heroImage-male.svg" alt="singer" />
+          <img src="/images/heroImage-male.webp" alt="singer" />
         </div>
         <div className="image-container left-item">
-          <img src="/images/female-homepage.svg" alt="artist" />
+          <img src="/images/female-homepage.webp" alt="artist" />
         </div>
       </div>
       <p className="text-col-grey-light visible-on-mobile">

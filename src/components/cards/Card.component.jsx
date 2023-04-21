@@ -62,7 +62,7 @@ export const CardLgHome = ({ image, children, heading }) => {
     <div className="cardLg-wrapper-home">
       <div className="cardLg-container-home">
         <div className="cardLg-image-container-home">
-          <img src={image} alt="deco" />
+          <img src={image} alt="sectionimage" />
           <div className="cardImage-text-home">
             <p>{heading}</p>
           </div>

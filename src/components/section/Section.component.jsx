@@ -49,7 +49,7 @@ export const Users = () => {
           to 9jastar
         </p>
         <div className="user-details-container">
-          <img src="/images/Raya.svg" alt="user profile"></img>
+          <img src="/images/Raya.webp" alt="user profile"></img>
           <p> Reya, 22</p>
           <p>Artist</p>
         </div>
