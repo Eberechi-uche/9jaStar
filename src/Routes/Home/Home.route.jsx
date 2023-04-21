@@ -17,6 +17,9 @@ export const Home = () => {
         <Hero />
       </Header>
 
+      <div className="logo-container">
+        <img src="/images/homepageLogo.svg" alt={"logo"} />
+      </div>
       <SectionLayout>
         <SectionText>
           With 9jastar you get to know the artists who are changing the game and
@@ -26,22 +29,31 @@ export const Home = () => {
           promoting these amazing artists and giving them the recognition they
           deserve.
         </SectionText>
-        <SectionImage />
+        <SectionImage image={"/images/iPhone 12 Mini.png"} />
+        <button className="btn bg-tertiary-purple btn-round text-col-white visible-on-mobile">
+          Get started
+        </button>
       </SectionLayout>
       <div className="home-text">
         <h2> why choose us</h2>
         <Carousel>
-          <CardLgHome image={"images/dance.jpg"} heading={"free uploads"}>
+          <CardLgHome
+            image={"/images/laddyholdingPhone.svg"}
+            heading={"free uploads"}
+          >
             upload up to 100 songs
           </CardLgHome>
           <CardLgHome
-            image={"images/dance.jpg"}
+            image={"/images/ladywithEarpiece.svg"}
             heading={"Great Audience reach"}
           >
             "our fast growing platform makes it easier to expand and enhance
             your reach"
           </CardLgHome>
-          <CardLgHome image={"images/dance.jpg"} heading={"features that work"}>
+          <CardLgHome
+            image={"/images/manwithphone.svg"}
+            heading={"features that work"}
+          >
             with the goal of empowering artist, 9jastar gives you more ways of
             supporting the artist you love with more social features
           </CardLgHome>
@@ -55,30 +67,50 @@ export const Home = () => {
 
 export const Hero = () => {
   return (
-    <div className="hero-container gd gd-col-2 ">
+    <div className="hero-container  gd-col-2 ">
+      <img
+        src="/images/music.svg"
+        alt="music icon"
+        className="music-icon left-icon"
+      />
+      <img
+        src="/images/music.svg"
+        alt="music icon"
+        className="music-icon right-icon"
+      />
       <div className="text-container">
         <h1 className="text-col-white">
           GET THAT VISIBILITY NEEDED AS AN UPCOMING ARTIST WITH 9JASTAR
         </h1>
-        <p className="text-col-grey-light">
+        <p className="text-col-grey-light hide">
           We believe that music has the power to bring people together and
           create positive change in the world. Through our website, we aim to
           spread the joy of music and connect fans with the artists they love.
         </p>
-        <Link to={"/login"}>
+        <Link to={"/login"} className="hide">
           <button className="btn bg-tertiary-purple btn-round text-col-white">
             Get started
           </button>
         </Link>
       </div>
-      <div className="image-container-wrapper">
-        <div className="image-container">
-          <img src="images/singer.jpg" alt="singer" />
+      <div className="image-container-wrapper ">
+        <div className="image-container right-item">
+          <img src="/images/heroImage-male.svg" alt="singer" />
         </div>
-        <div className="image-container top-item">
-          <img src="images/home-artist.jpg" alt="artist" />
+        <div className="image-container left-item">
+          <img src="/images/female-homepage.svg" alt="artist" />
         </div>
       </div>
+      <p className="text-col-grey-light visible-on-mobile">
+        We believe that music has the power to bring people together and create
+        positive change in the world. Through our website, we aim to spread the
+        joy of music and connect fans with the artists they love.
+      </p>
+      <Link to={"/login"} className="visible-on-mobile">
+        <button className="btn bg-tertiary-purple btn-round text-col-white">
+          Get started
+        </button>
+      </Link>
     </div>
   );
 };

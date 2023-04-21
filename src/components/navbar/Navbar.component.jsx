@@ -2,16 +2,14 @@ import "./navbar.styles.css";
 import { PlayIcon } from "../../svg/PlayIcon.svg";
 import { HamburgerIcon } from "../../svg/Hamburger.svg";
 import { NavLink, Outlet } from "react-router-dom";
-import { useState, useLayoutEffect, useRef, useContext } from "react";
+import { useState, useLayoutEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../../Utils/firebase/firebase.utils";
 import { signOut } from "@firebase/auth";
-import { profile } from "../../context/UserProfile";
 import { CardProfile } from "../cards/Card.component";
 
 export const Navbar = () => {
-  const { role } = useContext(profile);
   const [showNav, setShowNav] = useState(false);
   const toggleNav = () => {
     setShowNav(!showNav);
@@ -22,12 +20,18 @@ export const Navbar = () => {
   };
 
   return (
-    <>
+    <div className="layout">
       <nav className="nav ">
         <NavLink to="/" className="link ">
-          <p className="text-col-white">9jaStar</p>
+          <img
+            className="text-col-white logo"
+            src="/images/9jaLogo.svg"
+            alt="logo"
+          />
         </NavLink>
+
         <div className="toggle-icon" onClick={toggleNav}>
+          <Icon />
           <HamburgerIcon />
         </div>
         {showNav && <NavDropDown handleClick={toggleNav} />}
@@ -51,29 +55,26 @@ export const Navbar = () => {
                 Expolore Music
               </NavLink>
             </li>
-            {role === "User" && (
-              <li>
-                <NavLink
-                  to="/fan-request"
-                  style={({ isActive }) => (isActive ? activeStyle : undefined)}
-                  className="link"
-                >
-                  Fan request
-                </NavLink>
-              </li>
-            )}
-            {role === "User" && (
-              <li>
-                <NavLink
-                  to="/partner-with-us"
-                  style={({ isActive }) => (isActive ? activeStyle : undefined)}
-                  className="link"
-                >
-                  Partner With us
-                </NavLink>
-              </li>
-            )}
 
+            <li>
+              <NavLink
+                to="/fan-request"
+                style={({ isActive }) => (isActive ? activeStyle : undefined)}
+                className="link"
+              >
+                Fan request
+              </NavLink>
+            </li>
+
+            <li>
+              <NavLink
+                to="/partner-with-us"
+                style={({ isActive }) => (isActive ? activeStyle : undefined)}
+                className="link"
+              >
+                Partner With us
+              </NavLink>
+            </li>
             <li>
               <Icon />
             </li>
@@ -83,10 +84,9 @@ export const Navbar = () => {
       <div className="outlet-container">
         <Outlet></Outlet>
       </div>
-      <div className="footer-wrapper">
-        <Footer />
-      </div>
-    </>
+
+      <Footer />
+    </div>
   );
 };
 export const Header = ({ children }) => {
@@ -98,7 +98,6 @@ export const Header = ({ children }) => {
 };
 
 export const Icon = () => {
-  const { role } = useContext(profile);
   const [user] = useAuthState(auth);
 
   let activeStyle = {
@@ -111,7 +110,7 @@ export const Icon = () => {
         style={({ isActive }) => (isActive ? activeStyle : undefined)}
         className="link"
       >
-        <div className="logo">
+        <div className="join-btn">
           <p> Join</p>
           <div className="svg-round">
             <PlayIcon />
@@ -121,16 +120,14 @@ export const Icon = () => {
     </>
   ) : (
     <div
-      className="logo"
+      className="join-btn"
       onClick={() => {
         signOut(auth);
       }}
     >
       <p> Log out</p>
       <div className="svg-round">
-        <CardProfile
-          image={role === "User" ? "images/user.jpg" : "images/artist.jpeg"}
-        />
+        <CardProfile image="images/user.jpg" />
       </div>
     </div>
   );
@@ -138,7 +135,6 @@ export const Icon = () => {
 };
 
 export const NavDropDown = ({ handleClick }) => {
-  const { role } = useContext(profile);
   const navSlide = useRef();
   let activeStyle = {
     color: "#5ebb3b",
@@ -149,6 +145,7 @@ export const NavDropDown = ({ handleClick }) => {
       transition: "all 0.3s ease-out",
     });
   }, []);
+
   return (
     <div className="nav-dropdown" ref={navSlide}>
       <div className="nav-close-btn" onClick={handleClick}>
@@ -173,31 +170,25 @@ export const NavDropDown = ({ handleClick }) => {
             Expolore Music
           </NavLink>
         </li>
-        {role === "User" && (
-          <li>
-            <NavLink
-              to="/fan-request"
-              style={({ isActive }) => (isActive ? activeStyle : undefined)}
-              className="link"
-            >
-              Fan request
-            </NavLink>
-          </li>
-        )}
-        {role === "User" && (
-          <li>
-            <NavLink
-              to="/partner-with-us"
-              style={({ isActive }) => (isActive ? activeStyle : undefined)}
-              className="link"
-            >
-              Partner With us
-            </NavLink>
-          </li>
-        )}
 
         <li>
-          <Icon />
+          <NavLink
+            to="/fan-request"
+            style={({ isActive }) => (isActive ? activeStyle : undefined)}
+            className="link"
+          >
+            Fan request
+          </NavLink>
+        </li>
+
+        <li>
+          <NavLink
+            to="/partner-with-us"
+            style={({ isActive }) => (isActive ? activeStyle : undefined)}
+            className="link"
+          >
+            Partner With us
+          </NavLink>
         </li>
       </ul>
     </div>
@@ -208,20 +199,26 @@ export const Footer = () => {
   return (
     <footer className="footer-container">
       <ul className="footer-list">
-        <li>9jaStar</li>
+        <li>
+          <NavLink to="/" className="link ">
+            <img
+              className="text-col-white logo"
+              src="/images/9jaLogo.svg"
+              alt="logo"
+            />
+          </NavLink>
+        </li>
         <li>Explore Music</li>
         <li>community</li>
         <li>Partney with us</li>
         <li>Get support</li>
         <li>usefull links</li>
       </ul>
-      <div>
-        <ul className="footer-list">
-          <li>instagram</li>
-          <li> twitter</li>
-          <li> facebook</li>
-        </ul>
-      </div>
+      <ul className="footer-list">
+        <li>instagram</li>
+        <li> twitter</li>
+        <li> facebook</li>
+      </ul>
     </footer>
   );
 };

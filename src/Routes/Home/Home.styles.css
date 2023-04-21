@@ -3,11 +3,12 @@
 }
 
 .hero-container {
+  position: relative;
   display: grid;
   place-items: center;
-  width: 90vw;
+  width: 100%;
   height: 100%;
-  padding-bottom: 10em;
+  padding: 40px 10px;
 }
 .hero-container p,
 button {
@@ -15,33 +16,40 @@ button {
 }
 .text-container {
   width: 90%;
+  height: 70%;
+}
+.text-container h1 {
+  font-size: 3.2vw;
+  font-weight: 800;
 }
 .image-container-wrapper {
-  padding: 10px;
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   width: 100%;
   height: fit-content;
   position: relative;
+  padding: 25px;
 }
 .image-container {
-  width: 50%;
-  height: 85%;
+  width: 260px;
+  height: 587px;
   border-radius: 500px;
   overflow: hidden;
-  margin-top: 80px;
+  margin-top: 100px;
   transition: all 0.5s ease-in-out;
+  box-shadow: -5px -8px #d9d9d975;
 }
 .image-container img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-.top-item {
+.left-item {
   position: absolute;
-  top: -60px;
-  right: 1rem;
+  bottom: 100px;
+  right: 5%;
 }
+
 .image-container:hover {
   transform: scale(1.1);
 }
@@ -54,4 +62,69 @@ button {
   overflow: auto;
   white-space: nowrap;
   scroll-snap-type: x proximity;
+}
+.logo-container {
+  width: 100%;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+}
+.logo-container img {
+  width: 70%;
+
+  align-self: center;
+}
+.music-icon {
+  position: absolute;
+  width: 33px;
+  height: 34px;
+}
+
+.left-icon {
+  left: 155px;
+  bottom: 103px;
+}
+.right-icon {
+  left: 500px;
+  bottom: 284px;
+}
+
+@media screen and (max-width: 600px) {
+  .text-container h1 {
+    font-size: 6.5vw;
+    font-weight: 800;
+  }
+  .image-container-wrapper {
+    padding: 50px;
+  }
+  .music-icon {
+    width: 20px;
+  }
+  .right-icon {
+    left: 20px;
+    bottom: 384px;
+  }
+  .hide {
+    display: none;
+  }
+  .hero-container {
+    text-align: center;
+  }
+  .image-container {
+    width: 130px;
+    height: 272px;
+  }
+  .left-item {
+    right: 7%;
+  }
+}
+@media screen and (min-width: 700px) {
+  .visible-on-mobile {
+    display: none;
+  }
+  .logo-container img {
+    width: 50%;
+  }
 }

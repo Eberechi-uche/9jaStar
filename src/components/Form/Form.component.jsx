@@ -13,11 +13,6 @@ export const Form = ({ children, action, click, onSubmit, isLoading }) => {
         >
           {isLoading === true ? <BeatLoader color="#d8e9e5" /> : action}
         </button>
-
-        <p className="pd-10"> OR </p>
-        <div className="form-footer-icon">
-          <img src="images/google.png" alt="decorative" />
-        </div>
       </form>
     </div>
   );

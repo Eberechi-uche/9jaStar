@@ -45,7 +45,7 @@ export const SignUp = () => {
     if (user) {
       navigate("/explore-music");
     }
-  }, [user]);
+  }, [user, navigate]);
 
   return (
     <div className="login-wrapper">
@@ -59,7 +59,7 @@ export const SignUp = () => {
         </p>
         <Form
           title={"Login"}
-          action={"Login"}
+          action={"Sign Up"}
           onSubmit={handleSignUp}
           isLoading={loading}
         >
@@ -100,7 +100,7 @@ export const SignUp = () => {
       </div>
 
       <div className="auth-image-container">
-        <img src="images/singer.jpg" alt="artist" />
+        <img src="/images/sign-up.svg" alt="artist" />
       </div>
     </div>
   );

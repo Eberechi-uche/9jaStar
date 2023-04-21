@@ -177,10 +177,6 @@ li {
   list-style: none;
   padding-left: 1rem;
 }
-ul {
-  display: flex;
-  align-items: center;
-}
 
 /* MEDIA SCREEN LAYOUT */
 @media only screen and (max-width: 600px) {

@@ -30,6 +30,11 @@ export const ExploreMusic = () => {
           </SliderCarousel>
         </header>
         <main className="explore-music-items">
+          <Carousel title={"Top Trending Artist"}>
+            {artists.map((element, index) => (
+              <CardRound key={index} artistId={element} />
+            ))}
+          </Carousel>
           <Carousel title={"Trending Release"}>
             {albums.map((element, index) => (
               <CardLg
@@ -50,11 +55,6 @@ export const ExploreMusic = () => {
           <Carousel title={"What Is Your Genre?"}>
             {mood.map(({ image, mood }, index) => (
               <CardImage key={index} image={image} heading={mood} />
-            ))}
-          </Carousel>
-          <Carousel title={"Top Trending Artist"}>
-            {artists.map((element, index) => (
-              <CardRound key={index} artistId={element} />
             ))}
           </Carousel>
         </main>

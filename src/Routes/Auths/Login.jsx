@@ -1,5 +1,5 @@
 import { Form, Input } from "../../components/Form/Form.component";
-import { useEffect, useState, useContext } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./auth.styles.css";
 import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
@@ -13,7 +13,7 @@ export const Login = () => {
     password: "",
   });
   const [hide, setHide] = useState(true);
-  const [signInWithEmailAndPassword, user, loading, error] =
+  const [signInWithEmailAndPassword, user, loading] =
     useSignInWithEmailAndPassword(auth);
 
   // Variables
@@ -43,10 +43,10 @@ export const Login = () => {
     if (user) {
       navigate("/explore-music");
     }
-  }, [user]);
+  }, [user, navigate]);
 
   return (
-    <div className="login-wrapper">
+    <div className="login-wrapper login-bg">
       <div className="auth-form-container">
         <h2>Login</h2>
 
@@ -80,8 +80,8 @@ export const Login = () => {
         </Form>
       </div>
 
-      <div className="auth-image-container">
-        <img src="images/dance.jpg" alt="decorative" />
+      <div className="auth-image-container ">
+        <img src="/images/login.svg" alt="decorative" />
       </div>
     </div>
   );
