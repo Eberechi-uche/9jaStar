@@ -209,15 +209,15 @@ export const Footer = () => {
           </NavLink>
         </li>
         <li>Explore Music</li>
-        <li>community</li>
-        <li>Partney with us</li>
+        <li>Community</li>
+        <li>Partner with us</li>
         <li>Get support</li>
-        <li>usefull links</li>
+        <li>Usefull links</li>
       </ul>
       <ul className="footer-list">
-        <li>instagram</li>
-        <li> twitter</li>
-        <li> facebook</li>
+        <li>Instagram</li>
+        <li> Twitter</li>
+        <li> Facebook</li>
       </ul>
     </footer>
   );

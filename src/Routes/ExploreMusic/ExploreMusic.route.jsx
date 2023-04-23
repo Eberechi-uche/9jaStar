@@ -16,7 +16,7 @@ export const ExploreMusic = () => {
   return (
     <>
       <div className="explore-music-wrapper">
-        <header className="explore-header-container">
+        {/* <header className="explore-header-container">
           <SliderCarousel>
             <SliderCarouselItem>
               <img src="images/wizkid.jpg" alt="wizkid" className="img-fill" />
@@ -28,7 +28,7 @@ export const ExploreMusic = () => {
               <img src="images/cavemen.png" alt="wizkid" className="img-fill" />
             </SliderCarouselItem>
           </SliderCarousel>
-        </header>
+        </header> */}
         <main className="explore-music-items">
           <Carousel title={"Top Trending Artist"}>
             {artists.map((element, index) => (

@@ -41,21 +41,22 @@ export const Home = () => {
             image={"/images/laddyholdingPhone.webp"}
             heading={"free uploads"}
           >
-            upload up to 100 songs
+            Upload up to 1000+ songs for free. Get your release album uploaded
+            for your music lovers
           </CardLgHome>
           <CardLgHome
             image={"/images/laddywithheadphone.png"}
             heading={"Great Audience reach"}
           >
-            "our fast growing platform makes it easier to expand and enhance
-            your reach"
+            Our fast growing platform makes it easier to expand and enhance your
+            reach
           </CardLgHome>
           <CardLgHome
             image={"/images/manwithphone.webp"}
             heading={"features that work"}
           >
-            with the goal of empowering artist, 9jastar gives you more ways of
-            supporting the artist you love with more social features
+            With the goal of empowering artists. 9Jaster gives you more ways of
+            supporting the artist you love with more social feature
           </CardLgHome>
         </Carousel>
       </div>
@@ -83,9 +84,10 @@ export const Hero = () => {
           GET THAT VISIBILITY NEEDED AS AN UPCOMING ARTIST WITH 9JASTAR
         </h1>
         <p className="text-col-grey-light hide">
-          We believe that music has the power to bring people together and
-          create positive change in the world. Through our website, we aim to
-          spread the joy of music and connect fans with the artists they love.
+          We believe that music has the power to bring people <br /> together
+          and create positive change in the world. <br /> Through our website,
+          we aim to spread the joy of music <br /> and connect fans with the
+          artists they love.
         </p>
         <Link to={"/login"} className="hide">
           <button className="btn bg-tertiary-purple btn-round text-col-white">
@@ -95,16 +97,17 @@ export const Hero = () => {
       </div>
       <div className="image-container-wrapper ">
         <div className="image-container right-item">
-          <img src="/images/heroImage-male.webp" alt="singer" />
+          <img src="/images/female-homepage.webp" alt="singer" />
         </div>
         <div className="image-container left-item">
-          <img src="/images/female-homepage.webp" alt="artist" />
+          <img src="/images/heroImage-male.webp" alt="artist" />
         </div>
       </div>
       <p className="text-col-grey-light visible-on-mobile">
-        We believe that music has the power to bring people together and create
-        positive change in the world. Through our website, we aim to spread the
-        joy of music and connect fans with the artists they love.
+        We believe that music has the power to bring <br /> people together and
+        create positive change in the <br /> world. Through our website, we aim
+        to spread the <br /> joy of music and connect fans with the artists they
+        love.
       </p>
       <Link to={"/login"} className="visible-on-mobile">
         <button className="btn bg-tertiary-purple btn-round text-col-white">
