@@ -1,16 +1,24 @@
 import "./navbar.styles.css";
 import { PlayIcon } from "../../svg/PlayIcon.svg";
 import { HamburgerIcon } from "../../svg/Hamburger.svg";
-import { NavLink, Outlet } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { useState, useLayoutEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../../Utils/firebase/firebase.utils";
 import { signOut } from "@firebase/auth";
 import { CardProfile } from "../cards/Card.component";
+import { useLocation } from "react-router-dom";
 
+let linkColor;
 export const Navbar = () => {
   const [showNav, setShowNav] = useState(false);
+  const location = useLocation();
+  linkColor =
+    location.pathname !== "/" && location.pathname !== "/explore-music"
+      ? "link-section"
+      : "link";
+
   const toggleNav = () => {
     setShowNav(!showNav);
   };
@@ -22,7 +30,7 @@ export const Navbar = () => {
   return (
     <div className="layout">
       <nav className="nav ">
-        <NavLink to="/" className="link ">
+        <NavLink to="/" className={linkColor}>
           <img
             className="text-col-white logo"
             src="/images/9jaLogo.svg"
@@ -36,12 +44,12 @@ export const Navbar = () => {
         </div>
         {showNav && <NavDropDown handleClick={toggleNav} />}
         <div className="nav-item ">
-          <ul className="fl fl-row wd-100">
+          <ul className="fl fl-row wd-100 ">
             <li>
               <NavLink
                 to="/"
                 style={({ isActive }) => (isActive ? activeStyle : undefined)}
-                className="link"
+                className={linkColor}
               >
                 Home
               </NavLink>
@@ -50,7 +58,7 @@ export const Navbar = () => {
               <NavLink
                 to="/explore-music"
                 style={({ isActive }) => (isActive ? activeStyle : undefined)}
-                className="link"
+                className={linkColor}
               >
                 Expolore Music
               </NavLink>
@@ -60,7 +68,7 @@ export const Navbar = () => {
               <NavLink
                 to="/fan-request"
                 style={({ isActive }) => (isActive ? activeStyle : undefined)}
-                className="link"
+                className={linkColor}
               >
                 Fan request
               </NavLink>
@@ -70,7 +78,7 @@ export const Navbar = () => {
               <NavLink
                 to="/partner-with-us"
                 style={({ isActive }) => (isActive ? activeStyle : undefined)}
-                className="link"
+                className={linkColor}
               >
                 Partner With us
               </NavLink>
@@ -81,11 +89,6 @@ export const Navbar = () => {
           </ul>
         </div>
       </nav>
-      <div className="outlet-container">
-        <Outlet></Outlet>
-      </div>
-
-      <Footer />
     </div>
   );
 };
@@ -108,7 +111,7 @@ export const Icon = () => {
       <NavLink
         to="/login"
         style={({ isActive }) => (isActive ? activeStyle : undefined)}
-        className="link"
+        className={linkColor}
       >
         <div className="join-btn">
           <p> Join</p>
@@ -156,7 +159,7 @@ export const NavDropDown = ({ handleClick }) => {
           <NavLink
             to="/"
             style={({ isActive }) => (isActive ? activeStyle : undefined)}
-            className="link"
+            className={linkColor}
           >
             Home
           </NavLink>
@@ -165,7 +168,7 @@ export const NavDropDown = ({ handleClick }) => {
           <NavLink
             to="/explore-music"
             style={({ isActive }) => (isActive ? activeStyle : undefined)}
-            className="link"
+            className={linkColor}
           >
             Expolore Music
           </NavLink>
@@ -175,7 +178,7 @@ export const NavDropDown = ({ handleClick }) => {
           <NavLink
             to="/fan-request"
             style={({ isActive }) => (isActive ? activeStyle : undefined)}
-            className="link"
+            className={linkColor}
           >
             Fan request
           </NavLink>
@@ -185,7 +188,7 @@ export const NavDropDown = ({ handleClick }) => {
           <NavLink
             to="/partner-with-us"
             style={({ isActive }) => (isActive ? activeStyle : undefined)}
-            className="link"
+            className={linkColor}
           >
             Partner With us
           </NavLink>
@@ -200,7 +203,7 @@ export const Footer = () => {
     <footer className="footer-container">
       <ul className="footer-list">
         <li>
-          <NavLink to="/" className="link ">
+          <NavLink to="/" className={linkColor}>
             <img
               className="text-col-white logo"
               src="/images/9jaLogo.svg"

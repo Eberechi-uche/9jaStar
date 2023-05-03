@@ -2,7 +2,6 @@
   height: fit-content;
   overflow: hidden;
   place-items: center;
-  color: var(--white);
   margin-top: 20px;
 }
 .carousel-wrapper h3 {
@@ -16,4 +15,10 @@
 }
 .carousel-wrapper ::-webkit-scrollbar {
   display: none;
+}
+.carousel-color-dark {
+  color: var(--primary);
+}
+.carousel-color-light {
+  color: var(--white);
 }

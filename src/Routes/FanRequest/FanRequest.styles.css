@@ -1,0 +1,36 @@
+.fan-request-flow-container {
+  width: 70%;
+  height: 80%;
+  background-color: aquamarine;
+  position: relative;
+  padding: 10px;
+  display: flex;
+}
+.fan-request-flow-left {
+  height: 80%;
+  width: 50%;
+  padding: 20px;
+}
+.fan-request-flow-right img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.fan-request-flow-right {
+  height: 100%;
+  width: 50%;
+  margin-left: 10px;
+  border-radius: 15px;
+  overflow: hidden;
+}
+.fan-request-footer {
+  display: flex;
+  justify-content: space-around;
+  width: 50%;
+  position: absolute;
+  bottom: 20px;
+  padding: 10px;
+}
+.text-fan-request {
+  font-size: 0.7em;
+}

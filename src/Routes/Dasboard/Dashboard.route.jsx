@@ -1,10 +1,8 @@
 import "./dashboard.route.css";
-import { PlayIcon } from "../../svg/PlayIcon.svg";
-import { MusicIcon } from "../../svg/music.svg";
-import { Carousel } from "../../components/carousel/Carousel.component";
-import { useParams, Link } from "react-router-dom";
+import { CardImage, CardLg } from "../../components/cards/Card.component";
+import { useParams } from "react-router-dom";
 import artists from "../../../src/artist.json";
-
+import { Carousel } from "../../components/carousel/Carousel.component";
 export const Dashboard = () => {
   return (
     <div className="dashboard-container">
@@ -15,47 +13,85 @@ export const Dashboard = () => {
 export const DashboardHeader = () => {
   const { artistId } = useParams();
 
-  const { name, location, spotlight, listens, mainImage, currentListens } =
-    artists.find(
-      (element) => element.name.toLowerCase() === artistId.toLowerCase()
-    );
-  console.log();
+  const { name, listens, mainImage } = artists.find(
+    (element) => element.name.toLowerCase() === artistId.toLowerCase()
+  );
+
   return (
     <>
-      <div className="dashboard-header-container">
-        <img className="dashboard-image" src={mainImage} alt={name}></img>
-        <div className="dashboard-header-text-container">
-          <h2 className="bg-black">{name}</h2>
-          <p className="bg-black mg-10-t">
-            <span>By</span> {name}
-          </p>
-          <div className="fl fl-row dashboard-text-info-container">
-            <div className="dashboard-text-info">
-              <span>
-                <PlayIcon />
-              </span>
-              <p> {listens} plays</p>
+      <div>
+        <div className="dashboard-wrapper">
+          <div className={"dashboard-header"}>
+            <div className="dashboard-header-text">
+              <div className="dashboard-deco-image left">
+                <img src={"/images/dashboardbg2.png"} alt={"svg"} />
+                <img src={"/images/dashboardbg.png"} alt={"svg"} />
+              </div>
+              <div className="dashboard-deco-image right">
+                <img src={"/images/dashboardbg.png"} alt={"svg"} />
+                <img src={"/images/dashboardbg2.png"} alt={"svg"} />
+              </div>
+
+              <h2>{name}</h2>
+              <p> {listens} monnthly listerner</p>
             </div>
-            <div className="dashboard-text-info">
-              <span>
-                <MusicIcon />
-              </span>
-              <p> {currentListens} currently listening</p>
+            <div className="dashboard-header-image">
+              <img alt={"asana"} src={mainImage} />
+              <button className="btn btn-dashboard"> Request fan</button>
             </div>
+          </div>
+          <div>
+            <p>
+              Asana is a free spirit who is unapologetically herself. She is
+              passionate about her art and sees the world in a different way
+              than most people. She is curious and adventurous, always seeking
+              out new experiences and inspiration for her work. At the same
+              time, she can be fiercely independent and stubborn, refusing to
+              compromise her vision for anyone.
+            </p>
+          </div>
+          <div>
+            <Carousel title={"Most Listened"}>
+              <CardLg text={name} heading={"God dey"} />
+              <CardLg text={name} heading={"God dey"} />
+              <CardLg text={name} heading={"God dey"} />
+              <CardLg text={name} heading={"God dey"} />
+              <CardLg text={name} heading={"God dey"} />
+            </Carousel>
+          </div>
+          <div>
+            <Carousel title={`featured ${name}`}>
+              <CardLg text={name} heading={"God dey"} />
+              <CardLg text={name} heading={"God dey"} />
+              <CardLg text={name} heading={"God dey"} />
+              <CardLg text={name} heading={"God dey"} />
+              <CardLg text={name} heading={"God dey"} />
+            </Carousel>
+          </div>
+          <div>
+            <Carousel>
+              <CardImage
+                image={"/images/dashboard-image1.png"}
+                heading={"Fan Request"}
+              />
+              <CardImage
+                image={"/images/dashboard-image2.png"}
+                heading={"Support"}
+              />
+              <CardImage
+                image={"/images/dashboard-image3.png"}
+                heading={"Partner"}
+              />
+            </Carousel>
           </div>
         </div>
       </div>
-      <Carousel title={"ARTIST SPOTLIGHT"}>
-        {spotlight.map((item, index) => (
-          <DashboardCard image={item} key={index} />
-        ))}
-      </Carousel>
-      <div className="dashboard-wrapper">
-        <h3 className="pd-20"> FAST RISING GEOGRAPHY</h3>
-        <div className="dashboard-section-container">
-          {location.map(({ name, image }, index) => (
-            <DashboardCard title={name} image={image} key={index} />
-          ))}
+      <div className="dashboard-footer">
+        <div>
+          <img alt={"media-mentions"} src="/images/dashboard-footer.png" />
+        </div>
+        <div>
+          <img alt={"media-mentions"} src={"/images/dashboard-footer2.png"} />
         </div>
       </div>
     </>

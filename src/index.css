@@ -20,7 +20,6 @@ body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   font-family: "Raleway", sans-serif;
-  background-color: #280e23;
 }
 
 img,
@@ -101,6 +100,11 @@ h6 {
   color: var(--white);
   transition: all 0.3s ease-in-out;
 }
+.link-section {
+  text-decoration: none;
+  color: var(--primary);
+  transition: all 0.3s ease-in-out;
+}
 .link :visited {
   color: var(--white);
 }
@@ -179,7 +183,7 @@ li {
 }
 
 /* MEDIA SCREEN LAYOUT */
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 900px) {
   .gd-col-2 {
     grid-template-columns: repeat(1, 1fr);
   }
@@ -189,4 +193,7 @@ li {
 }
 .dbug-red {
   outline: 4px solid burlywood;
+}
+.outlet-container {
+  min-height: 100vh;
 }
