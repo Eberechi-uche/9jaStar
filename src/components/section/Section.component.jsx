@@ -32,7 +32,7 @@ export const SectionImage = ({ image }) => {
   return (
     <>
       <div className="section-image-container ">
-        <img src={image} alt="cell-phone-image"></img>
+        <img src={image} alt="cell-phone" />
       </div>
     </>
   );
