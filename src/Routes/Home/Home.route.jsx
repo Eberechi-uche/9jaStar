@@ -20,6 +20,7 @@ export const Home = () => {
       <div className="logo-container">
         <img src="/images/homepageLogo.webp" alt={"logo"} />
       </div>
+
       <SectionLayout>
         <SectionText>
           With 9jastar you get to know the artists who are changing the game and
@@ -89,7 +90,7 @@ export const Hero = () => {
           we aim to spread the joy of music <br /> and connect fans with the
           artists they love.
         </p>
-        <Link to={"/login"} className="hide">
+        <Link to={"/explore-music"} className="hide">
           <button className="btn bg-tertiary-purple btn-round text-col-white">
             Get started
           </button>
@@ -109,7 +110,7 @@ export const Hero = () => {
         to spread the <br /> joy of music and connect fans with the artists they
         love.
       </p>
-      <Link to={"/login"} className="visible-on-mobile">
+      <Link to={"/explore-music"} className="visible-on-mobile">
         <button className="btn bg-tertiary-purple btn-round text-col-white">
           Get started
         </button>

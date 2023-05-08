@@ -40,7 +40,7 @@ export const DashboardHeader = () => {
               <button className="btn btn-dashboard"> Request fan</button>
             </div>
           </div>
-          <div>
+          <div className="dashboard-bio-text">
             <p>
               Asana is a free spirit who is unapologetically herself. She is
               passionate about her art and sees the world in a different way
@@ -49,6 +49,22 @@ export const DashboardHeader = () => {
               time, she can be fiercely independent and stubborn, refusing to
               compromise her vision for anyone.
             </p>
+          </div>
+          <div>
+            <Carousel>
+              <CardImage
+                image={"/images/dashboard-image1.png"}
+                heading={"Fan Request"}
+              />
+              <CardImage
+                image={"/images/dashboard-image2.png"}
+                heading={"Support"}
+              />
+              <CardImage
+                image={"/images/dashboard-image3.png"}
+                heading={"Partner"}
+              />
+            </Carousel>
           </div>
           <div>
             <Carousel title={"Most Listened"}>
@@ -66,22 +82,6 @@ export const DashboardHeader = () => {
               <CardLg text={name} heading={"God dey"} />
               <CardLg text={name} heading={"God dey"} />
               <CardLg text={name} heading={"God dey"} />
-            </Carousel>
-          </div>
-          <div>
-            <Carousel>
-              <CardImage
-                image={"/images/dashboard-image1.png"}
-                heading={"Fan Request"}
-              />
-              <CardImage
-                image={"/images/dashboard-image2.png"}
-                heading={"Support"}
-              />
-              <CardImage
-                image={"/images/dashboard-image3.png"}
-                heading={"Partner"}
-              />
             </Carousel>
           </div>
         </div>

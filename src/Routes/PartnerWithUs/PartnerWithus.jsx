@@ -9,10 +9,24 @@ const PartnerWithus = () => {
       <div className="home-text">
         <h2>WHY YOU SHOULD PARTNER WITH US</h2>
         <Carousel>
-          <CardLgHome text={" body"} image={"/images/partnerWithUsCard.png"} />
-          <CardLgHome text={" body"} image={"/images/partnerWithUsCard2.png"} />
-          <CardLgHome text={" body"} image={"/images/partnerWithUsCard3.png"} />
-          <CardLgHome text={" body"} image={"/images/partnerWithUsCard4.png"} />
+          <CardLgHome
+            children={
+              " Live events and stage performance from talented rising stars"
+            }
+            image={"/images/partnerWithUsCard.png"}
+          />
+          <CardLgHome
+            children={" Signing of rising talents into a record label"}
+            image={"/images/partnerWithUsCard2.png"}
+          />
+          <CardLgHome
+            children={" Endorsement deal"}
+            image={"/images/partnerWithUsCard3.png"}
+          />
+          <CardLgHome
+            children={" Nomination and awards for rising talent"}
+            image={"/images/partnerWithUsCard4.png"}
+          />
         </Carousel>
       </div>
       <div

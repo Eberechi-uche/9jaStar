@@ -6,6 +6,12 @@
   height: fit-content;
   background-color: var(--white);
 }
+.section-child-container {
+  display: grid;
+  place-items: center;
+  width: 90%;
+  height: fit-content;
+}
 .section-image-container {
   display: grid;
   place-items: center;
@@ -82,5 +88,8 @@
   .user-testimony-container {
     width: 100%;
     font-size: 0.5em;
+  }
+  .section-child-container {
+    width: 100%;
   }
 }

@@ -34,3 +34,79 @@
 .text-fan-request {
   font-size: 0.7em;
 }
+.fan-request-form-wrapper {
+  min-height: 1000px;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.fan-request-form-container {
+  width: 50%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.fan-request-form-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.fan-request-form-text h2 {
+  text-transform: uppercase;
+}
+
+.FRcomponent-form-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--white);
+  width: 100%;
+  height: fit-content;
+  margin-top: 20px;
+}
+.FRcomponent-input-wrapper {
+  margin: 50px 0px;
+  width: 80%;
+  height: 100%;
+}
+.FRcomponent-input-container {
+  display: flex;
+  flex-direction: column;
+  margin: 50px 0px;
+}
+.FRcomponent-input-container label {
+  margin-top: 20px;
+}
+.FRcomponent-input-container input {
+  height: 75px;
+  border: none;
+  outline: none;
+  background-color: #e0e0e0;
+  padding-left: 20px;
+  border-radius: 7px;
+}
+.FRcomponent-input-container input :focus {
+  border: none;
+  outline: none;
+}
+.FRcomponent-btn-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.FRbtn {
+  background-color: var(--tertiary-purple);
+  color: var(--white);
+}
+@media screen and (max-width: 600px) {
+  .fan-request-form-text {
+    font-size: small;
+  }
+  .fan-request-form-container {
+    width: 90%;
+  }
+}

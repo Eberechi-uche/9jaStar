@@ -199,11 +199,15 @@ export const NavDropDown = ({ handleClick }) => {
 };
 
 export const Footer = () => {
+  const footer = useRef();
+  let activeStyle = {
+    color: "#5ebb3b",
+  };
   return (
-    <footer className="footer-container">
+    <footer className="footer-container" ref={footer}>
       <ul className="footer-list">
         <li>
-          <NavLink to="/" className={linkColor}>
+          <NavLink to="/" className={"link"}>
             <img
               className="text-col-white logo"
               src="/images/9jaLogo.svg"
@@ -211,11 +215,35 @@ export const Footer = () => {
             />
           </NavLink>
         </li>
-        <li>Explore Music</li>
-        <li>Community</li>
-        <li>Partner with us</li>
+        <li>
+          <NavLink
+            to="/explore-music"
+            style={({ isActive }) => (isActive ? activeStyle : undefined)}
+            className={"link"}
+          >
+            Expolore Music
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            to="/fan-request"
+            style={({ isActive }) => (isActive ? activeStyle : undefined)}
+            className={"link"}
+          >
+            Fan request
+          </NavLink>
+        </li>
+
+        <li>
+          <NavLink
+            to="/partner-with-us"
+            style={({ isActive }) => (isActive ? activeStyle : undefined)}
+            className={"link"}
+          >
+            Partner With us
+          </NavLink>
+        </li>
         <li>Get support</li>
-        <li>Usefull links</li>
       </ul>
       <ul className="footer-list">
         <li>Instagram</li>

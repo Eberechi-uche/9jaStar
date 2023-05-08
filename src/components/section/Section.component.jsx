@@ -1,13 +1,24 @@
 import "../section/section.styles.css";
 
 export const SectionLayout = ({ children }) => {
-  return <div className="section-container gd gd-col-2">{children}</div>;
+  return (
+    <div className="section-container gd ">
+      <div className="section-child-container gd-col-2">{children}</div>
+    </div>
+  );
 };
 
 export const SectionText = ({ children }) => {
   return (
     <>
       <div className="section-text-container ">
+        <h2
+          style={{
+            margin: " 10px 0px",
+          }}
+        >
+          DISCOVER RISING TALENTS
+        </h2>
         <p> {children}</p>
         <button className="btn btn-round text-col-white bg-tertiary-purple btn-wd-fit-content hide">
           Learn more
@@ -21,7 +32,7 @@ export const SectionImage = ({ image }) => {
   return (
     <>
       <div className="section-image-container ">
-        <img src={image} alt="yoda"></img>
+        <img src={image} alt="cell-phone-image"></img>
       </div>
     </>
   );
