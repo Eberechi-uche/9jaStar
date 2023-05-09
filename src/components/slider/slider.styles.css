@@ -2,8 +2,7 @@
   display: inline-block;
   align-items: center;
   justify-content: center;
-  height: 55vh;
-  background-color: green;
+  height: 45vh;
   color: #fff;
   width: 100%;
   overflow: hidden;
@@ -11,6 +10,7 @@
 .slider-carousel {
   overflow: hidden;
   position: relative;
+  background-color: #fff;
 }
 .inner {
   white-space: nowrap;
@@ -37,4 +37,9 @@
   background-color: var(--tertiary-lime);
   color: var(--primary);
   font-size: medium;
+}
+@media screen and (max-width: 900px) {
+  .slider-carousel-item {
+    height: 37vh;
+  }
 }

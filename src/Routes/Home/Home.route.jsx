@@ -9,6 +9,9 @@ import {
 } from "../../components/section/Section.component";
 import { Carousel } from "../../components/carousel/Carousel.component";
 import { CardLgHome } from "../../components/cards/Card.component";
+import SliderCarousel, {
+  SliderCarouselItem,
+} from "../../components/slider/SliderCarousel.component";
 
 export const Home = () => {
   return (
@@ -31,6 +34,7 @@ export const Home = () => {
           deserve.
         </SectionText>
         <SectionImage image={"/images/iPhone 12 Mini.png"} />
+
         <button className="btn bg-tertiary-purple btn-round text-col-white visible-on-mobile">
           Get started
         </button>
@@ -62,7 +66,23 @@ export const Home = () => {
         </Carousel>
       </div>
 
-      <Users />
+      <header className="testimony-header-container">
+        <div className="testimony-text">
+          <h3 className="mg-10">WHAT OUR ARTIST SAY</h3>
+        </div>
+
+        <SliderCarousel>
+          <SliderCarouselItem>
+            <Users name={"Raya, 22"} image={"/images/Raya.webp"} />
+          </SliderCarouselItem>
+          <SliderCarouselItem>
+            <Users name={"Gold, 35"} image={"/images/afroLady.webp"} />
+          </SliderCarouselItem>
+          <SliderCarouselItem>
+            <Users name={"John, 19"} image={"/images/lola.webp"} />
+          </SliderCarouselItem>
+        </SliderCarousel>
+      </header>
     </div>
   );
 };

@@ -42,7 +42,7 @@
   height: fit-content;
   display: grid;
   place-items: center;
-  height: 50vh;
+  height: 30vh;
   position: relative;
   padding: 20px;
 }

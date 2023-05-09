@@ -48,7 +48,7 @@ export const SignUp = () => {
   }, [user, navigate]);
 
   return (
-    <div className="login-wrapper">
+    <div className="login-wrapper sign-up-bg">
       <div className="auth-form-container">
         <h2>Get Started</h2>
         <p>

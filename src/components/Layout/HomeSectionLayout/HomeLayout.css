@@ -9,5 +9,9 @@
   display: flex;
   width: 100%;
   flex-direction: column;
-  max-width: 1300px;
+}
+.outlet-children {
+  display: flex;
+  flex-direction: column;
+  max-width: 1500px;
 }

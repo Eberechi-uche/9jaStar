@@ -35,12 +35,13 @@
   font-size: 0.7em;
 }
 .fan-request-form-wrapper {
-  min-height: 1000px;
+  min-height: 100px;
   display: flex;
   width: 100%;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 100px 0px;
 }
 .fan-request-form-container {
   width: 50%;
@@ -69,14 +70,14 @@
   margin-top: 20px;
 }
 .FRcomponent-input-wrapper {
-  margin: 50px 0px;
+  margin: 10px 0px;
   width: 80%;
   height: 100%;
 }
 .FRcomponent-input-container {
   display: flex;
   flex-direction: column;
-  margin: 50px 0px;
+  margin: 20px 0px;
 }
 .FRcomponent-input-container label {
   margin-top: 20px;
@@ -95,7 +96,8 @@
 }
 .FRcomponent-btn-container {
   display: flex;
-  align-items: center;
+  height: 100px;
+  align-items: flex-start;
   justify-content: center;
 }
 .FRbtn {

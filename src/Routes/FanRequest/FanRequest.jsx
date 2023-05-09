@@ -2,8 +2,10 @@ import { Link } from "react-router-dom";
 import "./FanRequest.styles.css";
 import { CardLgHome } from "../../components/cards/Card.component";
 import { Carousel } from "../../components/carousel/Carousel.component";
+import { useState } from "react";
 
 export const FanRequest = () => {
+  const [view, setView] = useState("form");
   return (
     <>
       <div className="fan-request-flow-wrapper">
@@ -38,7 +40,8 @@ export const FanRequest = () => {
               <p> connect with your favourite artist and make memories</p>
             </div>
 
-            <FanRequestForm />
+            {view === "form" && <FanRequestForm setView={setView} />}
+            {view === "done" && <Waitlist />}
           </div>
         </div>
       </div>
@@ -80,10 +83,10 @@ const PartnerWithUsHero = () => {
         </Link>
       </div>
       <div className="image-container-wrapper ">
-        <div className="image-container right-item">
+        <div className="image-container right-item image-container-purple ">
           <img src="/images/fanRequestHero1.png" alt="singer" />
         </div>
-        <div className="image-container left-item">
+        <div className="image-container left-item image-container-purple">
           <img src="/images/fanRequestHero2.png" alt="artist" />
         </div>
       </div>
@@ -103,7 +106,7 @@ const PartnerWithUsHero = () => {
     </div>
   );
 };
-const FanRequestForm = () => {
+const FanRequestForm = ({ setView }) => {
   return (
     <>
       <div className="FRcomponent-form-wrapper">
@@ -122,9 +125,29 @@ const FanRequestForm = () => {
             <input placeholder="Full name" />
           </div>
           <div className="FRcomponent-btn-container">
-            <button className="btn btn-round FRbtn"> Send Request</button>
+            <button
+              className="btn btn-round FRbtn"
+              onClick={() => {
+                setView("done");
+              }}
+            >
+              Send Request
+            </button>
           </div>
         </form>
+      </div>
+    </>
+  );
+};
+const Waitlist = () => {
+  return (
+    <>
+      <div
+        style={{
+          textAlign: "center",
+        }}
+      >
+        <h2> Thank you! for joining the waitlist</h2>
       </div>
     </>
   );

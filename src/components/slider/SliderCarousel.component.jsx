@@ -17,6 +17,7 @@ export const SliderCarousel = ({ children }) => {
     }
     setActiveIndex(newIndex);
   };
+
   return (
     <div className="slider-carousel">
       <div

@@ -80,10 +80,10 @@ const PartnerWithUsHero = () => {
         </Link>
       </div>
       <div className="image-container-wrapper ">
-        <div className="image-container right-item">
+        <div className="image-container right-item image-container-purple">
           <img src="/images/partnerWithUs1.png" alt="singer" />
         </div>
-        <div className="image-container left-item">
+        <div className="image-container left-item image-container-purple">
           <img src="/images/partnerWithUs2.png" alt="artist" />
         </div>
       </div>

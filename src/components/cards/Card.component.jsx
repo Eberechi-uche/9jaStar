@@ -24,7 +24,7 @@ export const CardLg = ({ image, heading, text }) => {
     </div>
   );
 };
-export const CardImage = ({ image, heading, onClick }) => {
+export const CardImage = ({ image, heading, onClick, link }) => {
   return (
     <div className="cardImage-container" onClick={onClick}>
       <img src={image} alt={heading} />

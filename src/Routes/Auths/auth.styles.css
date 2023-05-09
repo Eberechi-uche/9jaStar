@@ -49,6 +49,11 @@
   width: 100vw;
   height: 100vh;
 }
+.sign-up-bg {
+  background-color: var(--primary);
+  width: 100vw;
+  height: 100vh;
+}
 @media screen and (max-width: 600px) {
   .auth-image-container {
     display: none;

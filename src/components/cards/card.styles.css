@@ -38,10 +38,8 @@
 .cardImage-text {
   position: absolute;
   top: 50%;
-  right: 25%;
-  /* transform: translate(-80%, -50%); */
   text-transform: uppercase;
-  /* margin: 10px; */
+  width: 100%;
 }
 .cardImage-container img {
   width: 100%;

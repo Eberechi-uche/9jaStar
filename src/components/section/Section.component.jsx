@@ -37,7 +37,7 @@ export const SectionImage = ({ image }) => {
     </>
   );
 };
-export const Users = () => {
+export const Users = ({ image, name, children }) => {
   return (
     <div className="user-testimony-wrapper ">
       <img
@@ -51,7 +51,6 @@ export const Users = () => {
         className="music-icon user-icon-bottom"
       />
       <div className="user-testimony-container">
-        <h3 className="mg-10">Our Artists Says</h3>
         <p>
           I am a undergraduate and a artist <br /> and since i found this
           platform my life has changed. i got signed in to one of the best
@@ -60,8 +59,8 @@ export const Users = () => {
           to 9jastar
         </p>
         <div className="user-details-container">
-          <img src="/images/Raya.webp" alt="user profile"></img>
-          <p> Reya, 22</p>
+          <img src={image} alt={name} />
+          <p> {name}</p>
           <p>Artist</p>
         </div>
       </div>

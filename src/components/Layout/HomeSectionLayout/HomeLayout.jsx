@@ -8,7 +8,9 @@ const HomeLayout = () => {
       <div className="home-layout-container">
         <Navbar />
         <div className="outlet-container">
-          <Outlet />
+          <div className="outlet-children">
+            <Outlet />
+          </div>
         </div>
         <Footer />
       </div>
