@@ -1,8 +1,9 @@
-import { Link } from "react-router-dom";
 import { Carousel } from "../../components/carousel/Carousel.component";
 import { CardLgHome } from "../../components/cards/Card.component";
+import { useState } from "react";
 
 const PartnerWithus = () => {
+  const [view, setView] = useState("message");
   return (
     <>
       <PartnerWithUsHero />
@@ -40,9 +41,43 @@ const PartnerWithus = () => {
           justifyContent: "center",
           fontSize: "0.9em",
         }}
+        id="send-mail"
       >
         <h3>Partner with us today</h3>
         <p> send us an Email</p>
+      </div>
+      <div className="fan-request-form-wrapper">
+        <div className="fan-request-form-container">
+          {view === "message" && (
+            <div className="FRcomponent-form-wrapper">
+              <form className="FRcomponent-input-wrapper">
+                <div className="FRcomponent-input-container">
+                  <label> Full name</label>
+                  <input placeholder="Full name" />
+                  <label> Email</label>
+                  <input placeholder="Email" />
+                  <label />
+                  <textarea placeholder="Your message" className="mg-20" />
+                </div>
+                <div className="FRcomponent-btn-container">
+                  <button
+                    className="btn btn-round FRbtn"
+                    onClick={() => {
+                      setView("recieved");
+                    }}
+                  >
+                    Send Request
+                  </button>
+                </div>
+              </form>
+            </div>
+          )}
+          {view === "recieved" && (
+            <div>
+              <h2>Thank you !</h2>
+            </div>
+          )}
+        </div>
       </div>
     </>
   );
@@ -68,16 +103,17 @@ const PartnerWithUsHero = () => {
           future of music!
         </h1>
         <p className="hide">
-          Our Partner With Us feature that lets you connect and <br />
-          collaborate with fellow music enthusiasts from around the <br />
-          world. So, whether you're a solo artist or part of a band, come <br />
-          join our community and take your music to new heights!
+          Our Partner With Us seeks to promote upcoming musicians <br />
+          to showcase their talent to the world We are eager to collaborate with
+          you for any event, Endorsement, signing of rising talents nomination
+          and awards. Partner with us today to inspire musical creativity and
+          empower growth.
         </p>
-        <Link to={"/login"} className="hide">
+        <a href="#send-mail" className="hide">
           <button className="btn bg-tertiary-purple btn-round text-col-white">
             Partner with us
           </button>
-        </Link>
+        </a>
       </div>
       <div className="image-container-wrapper ">
         <div className="image-container right-item image-container-purple">
@@ -88,19 +124,18 @@ const PartnerWithUsHero = () => {
         </div>
       </div>
       <p className=" visible-on-mobile text-fan-request">
-        With our fan request feature you can now make your music <br />
-        moments even more special by requesting personalized <br />
-        shoutouts from your favourite artists, just for you and your loved
-        <br />
-        ones on special occasions. Request your favourite song now <br /> and
-        let's make some sensational music memories together!
+        Our Partner With Us seeks to promote upcoming musicians <br />
+        to showcase their talent to the world We are eager to collaborate with
+        you for any event, Endorsement, signing of rising talents nomination and
+        awards. Partner with us today to inspire musical creativity and empower
+        growth.
       </p>
 
-      <Link to={"/login"} className="visible-on-mobile">
+      <a href="#send-mail" className="visible-on-mobile">
         <button className="btn bg-tertiary-purple btn-round text-col-white">
           Partner with us
         </button>
-      </Link>
+      </a>
     </div>
   );
 };

@@ -34,10 +34,11 @@ export const Home = () => {
           deserve.
         </SectionText>
         <SectionImage image={"/images/iPhone 12 Mini.png"} />
-
-        <button className="btn bg-tertiary-purple btn-round text-col-white visible-on-mobile">
-          Get started
-        </button>
+        <Link to={"/explore-music"}>
+          <button className="btn bg-tertiary-purple btn-round text-col-white visible-on-mobile">
+            Get started
+          </button>
+        </Link>
       </SectionLayout>
       <div className="home-text">
         <h2> why choose us</h2>

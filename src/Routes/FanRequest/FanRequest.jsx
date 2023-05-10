@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import "./FanRequest.styles.css";
 import { CardLgHome } from "../../components/cards/Card.component";
 import { Carousel } from "../../components/carousel/Carousel.component";
@@ -76,11 +75,11 @@ const PartnerWithUsHero = () => {
           ones on special occasions. Request your favourite song now <br /> and
           let's make some sensational music memories together!
         </p>
-        <Link to="#request" className="hide">
+        <a href="#request" className="hide">
           <button className="btn bg-tertiary-purple btn-round text-col-white">
             Send a request
           </button>
-        </Link>
+        </a>
       </div>
       <div className="image-container-wrapper ">
         <div className="image-container right-item image-container-purple ">
@@ -98,11 +97,11 @@ const PartnerWithUsHero = () => {
         ones on special occasions. Request your favourite song now <br /> and
         let's make some sensational music memories together!
       </p>
-      <Link to="#request" className="visible-on-mobile">
+      <a href="#request" className="visible-on-mobile">
         <button className="btn bg-tertiary-purple btn-round text-col-white">
           Get started
         </button>
-      </Link>
+      </a>
     </div>
   );
 };
@@ -119,7 +118,7 @@ const FanRequestForm = ({ setView }) => {
             <label> Phone number</label>
             <input placeholder="Phone number" />
             <label> Fan Request Feature</label>
-            <input placeholder="Full name" />
+            <input placeholder="Fan Request feature" />
 
             <label> Artist</label>
             <input placeholder="Full name" />

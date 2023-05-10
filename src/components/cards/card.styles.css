@@ -10,6 +10,12 @@
   margin: 5px;
   display: inline-block;
 }
+.grey {
+  background-color: var(--grey-tertiary);
+}
+.cardLg-container:hover {
+  background-color: var(--grey-secondary);
+}
 .cardLg-image-container {
   width: 100%;
   height: 80%;

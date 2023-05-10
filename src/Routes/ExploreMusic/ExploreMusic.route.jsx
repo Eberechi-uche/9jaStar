@@ -5,14 +5,16 @@ import {
   CardImage,
   CardRound,
 } from "../../components/cards/Card.component";
-import SliderCarousel, {
-  SliderCarouselItem,
-} from "../../components/slider/SliderCarousel.component";
+
 import artists from "../../../src/artist.json";
 import albums from "../../../src/albums.json";
 import mood from "../../../src/mood.json";
+import { useEffect } from "react";
 
 export const ExploreMusic = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
       <div className="explore-music-wrapper">
@@ -45,6 +47,28 @@ export const ExploreMusic = () => {
               />
             ))}
           </Carousel>
+          <Carousel title={"What is your Genre"}>
+            <CardLg
+              heading={"Gospel"}
+              color={"grey"}
+              image={"/images/genre1.jpg"}
+            />
+            <CardLg
+              heading={"Afro Pop"}
+              color={"grey"}
+              image={"/images/genre2.jpg"}
+            />
+            <CardLg
+              heading={"Vibes"}
+              color={"grey"}
+              image={"/images/genre3.jpg"}
+            />
+            <CardLg
+              heading={"Thanksgiving"}
+              color={"grey"}
+              image={"/images/genre4.jpg"}
+            />
+          </Carousel>
           <Carousel title={"upcoming events"}>
             <CardLg
               image={"images/jon-bellion.png"}
@@ -52,7 +76,7 @@ export const ExploreMusic = () => {
               text={"Date: july 1"}
             />
           </Carousel>
-          <Carousel title={"What Is Your Genre?"}>
+          <Carousel title={"What Is Your Mood?"}>
             {mood.map(({ image, mood }, index) => (
               <CardImage key={index} image={image} heading={mood} />
             ))}

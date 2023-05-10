@@ -9,6 +9,11 @@ import { auth } from "../../Utils/firebase/firebase.utils";
 import { signOut } from "@firebase/auth";
 import { CardProfile } from "../cards/Card.component";
 import { useLocation } from "react-router-dom";
+import {
+  AiFillInstagram,
+  AiFillTwitterSquare,
+  AiFillFacebook,
+} from "react-icons/ai";
 
 let linkColor;
 export const Navbar = () => {
@@ -170,7 +175,7 @@ export const NavDropDown = ({ handleClick }) => {
             style={({ isActive }) => (isActive ? activeStyle : undefined)}
             className={linkColor}
           >
-            Expolore Music
+            Explore Music
           </NavLink>
         </li>
 
@@ -221,7 +226,7 @@ export const Footer = () => {
             style={({ isActive }) => (isActive ? activeStyle : undefined)}
             className={"link"}
           >
-            Expolore Music
+            Explore Music
           </NavLink>
         </li>
         <li>
@@ -245,10 +250,16 @@ export const Footer = () => {
         </li>
         <li>Get support</li>
       </ul>
-      <ul className="footer-list">
-        <li>Instagram</li>
-        <li> Twitter</li>
-        <li> Facebook</li>
+      <ul className="footer-list footer-socials">
+        <li>
+          <AiFillInstagram size={"1.5em"} />
+        </li>
+        <li>
+          <AiFillTwitterSquare size={"1.5em"} />
+        </li>
+        <li>
+          <AiFillFacebook size={"1.5em"} />
+        </li>
       </ul>
     </footer>
   );

@@ -82,13 +82,18 @@
 .FRcomponent-input-container label {
   margin-top: 20px;
 }
-.FRcomponent-input-container input {
+.FRcomponent-input-container input,
+textarea {
   height: 75px;
   border: none;
   outline: none;
   background-color: #e0e0e0;
   padding-left: 20px;
   border-radius: 7px;
+}
+
+textarea {
+  height: 150px;
 }
 .FRcomponent-input-container input :focus {
   border: none;

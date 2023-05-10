@@ -11,9 +11,9 @@ export const ScrollLayout = ({ children, title }) => {
   );
 };
 
-export const CardLg = ({ image, heading, text }) => {
+export const CardLg = ({ image, heading, text, color }) => {
   return (
-    <div className="cardLg-container">
+    <div className={`cardLg-container ${color}`}>
       <div className="cardLg-image-container">
         <img src={image} alt={text}></img>
       </div>

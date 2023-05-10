@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./slider.styles.css";
 import { useState } from "react";
 
@@ -17,6 +17,14 @@ export const SliderCarousel = ({ children }) => {
     }
     setActiveIndex(newIndex);
   };
+  useEffect(() => {
+    const sliderInterval = setInterval(() => {
+      updateIndex(activeIndex + 1);
+    }, 2000);
+    return () => {
+      clearInterval(sliderInterval);
+    };
+  });
 
   return (
     <div className="slider-carousel">
