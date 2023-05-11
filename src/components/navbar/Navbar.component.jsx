@@ -209,7 +209,7 @@ export const Footer = () => {
     color: "#5ebb3b",
   };
   return (
-    <footer className="footer-container" ref={footer}>
+    <div className="footer-container" ref={footer}>
       <ul className="footer-list">
         <li>
           <NavLink to="/" className={"link"}>
@@ -261,6 +261,6 @@ export const Footer = () => {
           <AiFillFacebook size={"1.5em"} />
         </li>
       </ul>
-    </footer>
+    </div>
   );
 };
