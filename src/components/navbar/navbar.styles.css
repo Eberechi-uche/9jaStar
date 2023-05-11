@@ -133,7 +133,6 @@
   .footer-container {
     grid-template-columns: repeat(2, 1fr);
     background-image: url("/public/images/mobileFooterBg.png");
-    border: 2px solid green;
   }
   .footer-list {
     flex-direction: column;
