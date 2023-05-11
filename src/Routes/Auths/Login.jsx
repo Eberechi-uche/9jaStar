@@ -46,42 +46,43 @@ export const Login = () => {
   }, [user, navigate]);
 
   return (
-    <div className="login-wrapper login-bg">
-      <div className="auth-form-container">
-        <h2>Login</h2>
+    <div className="auth-layout ">
+      <div className="login-wrapper ">
+        <div className="auth-form-container">
+          <h2>Login</h2>
+          <p>
+            dont have an account ?
+            <Link to={"/sign-up"} className="link">
+              <span>Sign up</span>
+            </Link>
+          </p>
+          <Form
+            title={"Login"}
+            action={"Login"}
+            onSubmit={HandleLogin}
+            isLoading={loading}
+          >
+            <Input
+              label={"Email"}
+              type="email"
+              required
+              name="email"
+              onChange={handleOnChange}
+            />
+            <Input
+              label={"password"}
+              type={show}
+              required
+              click={handleShowPassword}
+              name="password"
+              onChange={handleOnChange}
+            />
+          </Form>
+        </div>
 
-        <p>
-          dont have an account ?
-          <Link to={"/sign-up"} className="link">
-            <span>Sign up</span>
-          </Link>
-        </p>
-        <Form
-          title={"Login"}
-          action={"Login"}
-          onSubmit={HandleLogin}
-          isLoading={loading}
-        >
-          <Input
-            label={"Email"}
-            type="email"
-            required
-            name="email"
-            onChange={handleOnChange}
-          />
-          <Input
-            label={"password"}
-            type={show}
-            required
-            click={handleShowPassword}
-            name="password"
-            onChange={handleOnChange}
-          />
-        </Form>
-      </div>
-
-      <div className="auth-image-container ">
-        <img src="/images/login.webp" alt="decorative" />
+        <div className="auth-image-container ">
+          <img src="/images/login.webp" alt="decorative" />
+        </div>
       </div>
     </div>
   );

@@ -48,59 +48,61 @@ export const SignUp = () => {
   }, [user, navigate]);
 
   return (
-    <div className="login-wrapper sign-up-bg">
-      <div className="auth-form-container">
-        <h2>Get Started</h2>
-        <p>
-          Already have an account ?
-          <Link to={"/login"} className="link">
-            <span>Login</span>
-          </Link>
-        </p>
-        <Form
-          title={"Login"}
-          action={"Sign Up"}
-          onSubmit={handleSignUp}
-          isLoading={loading}
-        >
-          <Input
-            label={"Email"}
-            type="email"
-            required
-            name="email"
-            onChange={handleOnChange}
-          />
-          <Input
-            label={"password"}
-            type={show}
-            required
-            click={handleShowPassword}
-            name="password"
-            onChange={handleOnChange}
-          />
-          <Input
-            label={"password"}
-            type={show}
-            required
-            click={handleShowPassword}
-            name="confirmPassword"
-            onChange={handleOnChange}
-          />
-          {userError ||
-            (error && (
-              <p
-                style={{
-                  color: "var(--error)",
-                }}
-              >
-                {userError || error.message}
-              </p>
-            ))}
-        </Form>
-      </div>
+    <div className="auth-layout sign-up-bg">
+      <div className="login-wrapper ">
+        <div className="auth-form-container">
+          <h2>Get Started</h2>
+          <p>
+            Already have an account ?
+            <Link to={"/login"} className="link">
+              <span>Login</span>
+            </Link>
+          </p>
+          <Form
+            title={"Login"}
+            action={"Sign Up"}
+            onSubmit={handleSignUp}
+            isLoading={loading}
+          >
+            <Input
+              label={"Email"}
+              type="email"
+              required
+              name="email"
+              onChange={handleOnChange}
+            />
+            <Input
+              label={"password"}
+              type={show}
+              required
+              click={handleShowPassword}
+              name="password"
+              onChange={handleOnChange}
+            />
+            <Input
+              label={"password"}
+              type={show}
+              required
+              click={handleShowPassword}
+              name="confirmPassword"
+              onChange={handleOnChange}
+            />
+            {userError ||
+              (error && (
+                <p
+                  style={{
+                    color: "var(--error)",
+                  }}
+                >
+                  {userError || error.message}
+                </p>
+              ))}
+          </Form>
+        </div>
 
-      <div className="auth-image-container">
-        <img src="/images/sign-up.webp" alt="artist" />
+        <div className="auth-image-container">
+          <img src="/images/sign-up.webp" alt="artist" />
+        </div>
       </div>
     </div>
   );

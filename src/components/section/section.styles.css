@@ -42,9 +42,8 @@
   height: fit-content;
   display: grid;
   place-items: center;
-  height: 30vh;
+  min-height: 40vh;
   position: relative;
-  padding: 20px;
 }
 
 .user-icon-top {
@@ -61,6 +60,7 @@
   justify-content: center;
   align-items: center;
   width: 70%;
+  height: 100%;
 }
 .user-details-container img {
   margin: 20px;
@@ -69,7 +69,7 @@
   object-fit: cover;
   border-radius: 100px;
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 900px) {
   .user-icon-top {
     display: none;
   }
@@ -88,6 +88,7 @@
   .user-testimony-container {
     width: 100%;
     font-size: 0.5em;
+    height: 50vh;
   }
   .section-child-container {
     width: 100%;

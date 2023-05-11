@@ -93,15 +93,13 @@
 
 .footer-container {
   width: 100%;
-
-  min-height: 300px;
+  min-height: 30vh;
   background-size: 100% 100%;
   background-image: url("/public/images/footerBg.png");
   color: var(--white);
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   align-items: center;
-  padding: 25px 0px;
 }
 
 .footer-list {
@@ -135,6 +133,7 @@
   .footer-container {
     grid-template-columns: repeat(2, 1fr);
     background-image: url("/public/images/mobileFooterBg.png");
+    border: 2px solid green;
   }
   .footer-list {
     flex-direction: column;

@@ -1,9 +1,17 @@
+.auth-layout {
+  display: grid;
+  width: 100vw;
+  min-height: 100vh;
+  place-items: center;
+
+  background-image: url("/public/images/login-background.svg");
+}
 .login-wrapper {
   padding: 20px 0;
   display: grid;
   grid-template-columns: repeat(2, 50%);
-  width: 100vw;
-  height: 90vh;
+  width: 100%;
+  max-width: 1500px;
 }
 
 .form-footer-text {
@@ -22,11 +30,8 @@
   font-weight: 600;
 }
 .auth-image-container {
-  height: 90%;
-  overflow: hidden;
-  margin: 20px;
-  border-radius: 15px;
-  width: 518px;
+  width: 80%;
+  height: 70%;
 }
 .auth-image-container img {
   width: 100%;
@@ -44,17 +49,8 @@
   width: 100vw;
   color: var(--white);
 }
-.login-bg {
-  background-image: url("/public/images/login-background.svg");
-  width: 100vw;
-  height: 100vh;
-}
-.sign-up-bg {
-  background-color: var(--primary);
-  width: 100vw;
-  height: 100vh;
-}
-@media screen and (max-width: 600px) {
+
+@media screen and (max-width: 900px) {
   .auth-image-container {
     display: none;
   }

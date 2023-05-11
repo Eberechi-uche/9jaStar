@@ -4,14 +4,11 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  width: 100vw;
 }
 .home-layout-container {
   display: flex;
   width: 100%;
-  flex-direction: column;
-}
-.outlet-children {
-  display: flex;
   flex-direction: column;
   max-width: 1500px;
 }

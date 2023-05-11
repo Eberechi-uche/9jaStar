@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import "./slider.styles.css";
 import { useState } from "react";
 
-export const SliderCarouselItem = ({ children, width }) => {
+export const SliderCarouselItem = ({ children }) => {
   return <div className="slider-carousel-item">{children}</div>;
 };
 
@@ -30,7 +30,10 @@ export const SliderCarousel = ({ children }) => {
     <div className="slider-carousel">
       <div
         className="inner"
-        style={{ transform: `translateX(-${activeIndex * 100}%)` }}
+        style={{
+          transform: `translateX(-${activeIndex * 100}%)`,
+          transition: "all 0.7s ease-in-out",
+        }}
       >
         {React.Children.map(children, (child, index) => {
           return React.cloneElement(child, { width: "100%" });

@@ -67,7 +67,7 @@ export const Home = () => {
         </Carousel>
       </div>
 
-      <header className="testimony-header-container">
+      <section className="testimony-header-container">
         <div className="testimony-text">
           <h3 className="mg-10">WHAT OUR ARTIST SAY</h3>
         </div>
@@ -83,7 +83,7 @@ export const Home = () => {
             <Users name={"John, 19"} image={"/images/lola.webp"} />
           </SliderCarouselItem>
         </SliderCarousel>
-      </header>
+      </section>
     </div>
   );
 };

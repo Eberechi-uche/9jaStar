@@ -12,6 +12,7 @@
   overflow: auto;
   white-space: nowrap;
   scroll-snap-type: x proximity;
+  scroll-snap-stop: always;
 }
 .carousel-wrapper ::-webkit-scrollbar {
   display: none;
