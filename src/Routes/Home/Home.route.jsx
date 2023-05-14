@@ -80,7 +80,7 @@ export const Home = () => {
             <Users name={"Gold, 35"} image={"/images/afroLady.webp"} />
           </SliderCarouselItem>
           <SliderCarouselItem>
-            <Users name={"John, 19"} image={"/images/lola.webp"} />
+            <Users name={"John, 19"} image={"images/fanRequestimage3.png"} />
           </SliderCarouselItem>
         </SliderCarousel>
       </section>

@@ -74,7 +74,7 @@ const PartnerWithus = () => {
           )}
           {view === "recieved" && (
             <div>
-              <h2>Thank you !</h2>
+              <h2>Thank you! for joining the waitlist.</h2>
             </div>
           )}
         </div>

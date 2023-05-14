@@ -38,7 +38,9 @@ export const DashboardHeader = () => {
             </div>
             <div className="dashboard-header-image">
               <img alt={"asana"} src={mainImage} />
-              <button className="btn btn-dashboard"> Request fan</button>
+              <Link to={"/fan-request"}>
+                <button className="btn btn-dashboard"> Request fan</button>
+              </Link>
             </div>
           </div>
           <div className="dashboard-bio-text">
